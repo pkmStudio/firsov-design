@@ -1,0 +1,28 @@
+.header__preview {
+    background-image: url(../../img/banner.png);
+    background-size: cover;
+    position: relative;
+    z-index: -2;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}

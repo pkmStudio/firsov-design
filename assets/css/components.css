@@ -1,2 +1,5 @@
 @import url("../components/parts/hader-footer.css");
 @import url("../components/button/button.css");
+@import url("../components/header/header.css");
+@import url("../components/preview/preview.css");
+@import url("../components/project-card/project.css");

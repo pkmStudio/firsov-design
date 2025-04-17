@@ -6,3 +6,33 @@
 
 /* COMPONETNS */
 @import url("components.css");
+
+body {
+    background-color: var(--dark);
+}
+
+.main {
+    background-image: url(../../img/svg/banner.png);
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: #000;
+}
