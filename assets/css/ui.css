@@ -1,0 +1,45 @@
+
+/* COLORS */
+:root {
+    --light: #F2F2F2;
+    --dark: #0C0C0C;
+    --gray-light: #7C7C7C;
+    --gray-dark: #323232;
+    --gray-mid: #444444;
+    --gray-alt: #4A4A4A;
+}
+
+/* UI */
+* {
+    font-family: "Inter", sans-serif;
+}
+
+._container {
+    max-width: 2560px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+._h1 {
+    font-size: clamp(1rem, 4.3vw, 6.875rem  /* 110/16 */);
+    line-height: 120%;
+    font-weight: 600;
+}
+
+._h2 {
+    font-size: clamp(1rem, 3.516vw, 5.625rem  /* 90/16 */);
+    line-height: 130%;
+    font-weight: 500;
+}
+
+._h3, ._text {
+    font-size: clamp(1rem, 1.25vw, 2rem);
+    line-height: 120%;
+    font-weight: 400;
+}
+
+._h4 {
+    font-size: clamp(0.875rem, 1.09vw, 1.75rem  /* 28/16 */);
+    line-height: 130%;
+    font-weight: 300;
+}
