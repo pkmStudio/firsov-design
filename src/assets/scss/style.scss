@@ -1,23 +1,18 @@
-/* FONTS */
-@import url("fonts.css");
+@use "null";
+@use "fonts";
+@use "ui";
+@use "components";
 
-/* UI */
-@import url("ui.css");
-
-/* COMPONETNS */
-@import url("components.css");
-
-body {
-    background-color: var(--dark);
-}
-
-.main {
-    background-image: url(../../img/svg/banner.png);
+.preview {
+    background-image: url(../img/banner.webp);
     background-size: cover;
 }
 
+.preview-title {
+  text-transform: uppercase;  
+}
+
 a {
-    text-decoration: none;
     color: #fff;
 }
 
