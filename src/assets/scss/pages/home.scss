@@ -1,6 +1,7 @@
 .preview {
     background-image: url(../img/banner.webp);
     background-size: cover;
+    position: relative;
 }
 
 .preview {
@@ -26,18 +27,18 @@
     text-align: center;
 }
 
-.preview-title {
+.preview__title {
     margin-bottom: 20px;
 }
 
-.preview-text {
+.preview__text {
     font-size: 1.2em;
     margin-bottom: 30px;
     color: var(--light);
 }
 
 
-.preview-cities {
+.preview__cities {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,28 +49,33 @@
     z-index: 2;
 }
 
-.preview-city {
+.preview__city {
     color: #fff;
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
 
-.preview-city:hover {
+.preview__city:hover {
     opacity: 1;
 }
 
 @media (max-width: 768px) {
-    .preview-title {
+    .preview__title {
         font-size: 2.5em;
     }
 
-    .preview-text {
+    .preview__text {
         font-size: 1em;
     }
 
-    .preview-cities {
+    .preview__cities {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
+}
+
+.project__button {
+    text-align: center;
+    width: 100%;
 }
