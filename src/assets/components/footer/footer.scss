@@ -233,3 +233,27 @@
     gap: 1rem;
 }
 
+@media (max-width: 767px) {
+  .info-footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 448px) {
+  .footer__form-content,
+  .info-footer__row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer__email {
+    margin-bottom: 1rem;
+  }
+  .copyright,
+  .copyright-info {
+    display: flex;
+    flex-direction: column;
+  }
+}
