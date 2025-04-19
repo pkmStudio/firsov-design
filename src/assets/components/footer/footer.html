@@ -1,6 +1,150 @@
-        <footer>
-            
-        </footer>
+<footer class="footer">
+    <section class="footer__form-content _container">
+        <div class="footer__content">
+          <div class="footer__form form-footer">
+            <div class="form-footer__group form-group">
+              <div class="form-group__item">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Имя"
+                  onfocus="this.placeholder=''"
+                  onblur="this.placeholder='Имя'"
+                />
+                @@include("rectangle-line/rectangle-line.html")
+              </div>
+              <div class="form-group__item">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Телефон"
+                  onfocus="this.placeholder=''"
+                  onblur="this.placeholder='Телефон'"
+                />
+                @@include("rectangle-line/rectangle-line.html")
+              </div>
+            </div>
+            <div class="form-footer__checkbox-group">
+              <div class="form-footer__checkbox-item">
+                <input type="checkbox" id="whatsapp" name="whatsapp" />
+                <label for="whatsapp">WhatsApp</label>
+              </div>
+              <div class="form-footer__checkbox-item">
+                <input type="checkbox" id="telegram" name="telegram" />
+                <label for="telegram">Telegram</label>
+              </div>
+            </div>
+            <div class="form-footer__item">
+              <textarea
+                id="comments"
+                name="comments"
+                placeholder="Комментарии"
+                onfocus="this.placeholder=''"
+                onblur="this.placeholder='Комментарии'"
+              ></textarea>
+              @@include("rectangle-line/rectangle-line.html")
+            </div>
+    
+            <div class="form-footer__checkbox-item">
+              <input type="checkbox" id="privacy" name="privacy" required />
+              <label for="privacy">Согласен с политикой конфиденциальности</label>
+            </div>
+    
+            <button type="submit" class="form-footer__button button">
+              Отправить
+            </button>
+          </div>
+        </div>
+        <div class="footer__email">
+          <a href="mailto:info@firsov.design">info@firsov.design</a>
+        </div>
+    </section>
+    <section class="footer__info info-footer _container">
+        <div class="info-footer__right-column">
+            <div class="info-footer__row">
+                <div class="info-footer__text">
+                    <div class="info-footer__content">
+                        <p class="info-footer__title">Информация</p>
+                        <a href="#" class="info-footer__link">Проекты</a>
+                        <a href="#" class="info-footer__link">О нас</a>
+                        <a href="#" class="info-footer__link">Этапы работы</a>
+                        <a href="#" class="info-footer__link">Дизайн-проекты</a>
+                        <a href="#" class="info-footer__link">Контакты</a>
+                    </div>
+                    <div class="info-footer__content">
+                        <p class="info-footer__title">Напишите нам</p>
+                        <a href="#" class="info-footer__link">Telegram</a>
+                        <a href="#" class="info-footer__link">Whatsapp</a>
+                    </div>
+    
+                </div>
+                <div class="info-footer__modal footer-modal">
+                    <div class="footer-modal__call">
+                        <p>/Заказать звонок</p>
+                        <p>+</p>
+                    </div>
+                    @@include("rectangle-line/rectangle-line.html")
+                </div>
+            </div>
+            <div class="info-footer__row">
+                <div class="info-footer__content footer-row-left-column">
+                    <p class="info-footer__title">Звонок</p>
+                    <a href="#" class="info-footer__link">+7 925 652 98 00 - Москва</a>
+                    <a href="#" class="info-footer__link"> +971 55 472 8140 - Дубай</a>
+                </div>
+                <div class="info-footer__content footer-row-right-column">
+                    <p class="info-footer__title">Email</p>
+                    <a href="#" class="info-footer__link">firsov.design</a>
+                </div>
+            </div>   
+            <div class="info-footer__row">
+                <div class="info-footer__content footer-row-left-column">
+                    <p class="info-footer__title">Подпишитесь на нас</p>
+                    <a href="#" class="info-footer__link">Telegram</a>
+                    <a href="#" class="info-footer__link">Vkontakte</a>
+                    <a href="#" class="info-footer__link">YouTube</a>
+                    <div class="legal-info">
+                        <p class="legal-info__name">ИП Фирсов А.С.</p>
+                        <p class="legal-info__ogrnip">ОГРНИП: 317265100065141</p>
+                    </div>
+                </div>
+                <div class="info-footer__content footer-row-right-column">
+                    <p class="info-footer__title">Адрес</p>
+                    <a href="#" class="info-footer__link">1-й Красногвардейский проезд, 21с1 МФК ОКО</a>
+                </div>
+            </div>   
+            <div class="info-footer__row">
+                <div class="footer-row-left-column">
+                    <a href="#" class="info-footer__link">Политика конфиденциальности</a>
+                </div>
+                <div class="footer-row-right-column">
+                    <div class="copyright info-footer__link">
+                        <div>
+                            <span class="copyright__domain">firsov.design ©</span>
+                        </div>
+                        <div>
+                            <span class="copyright__text">Made by</span>
+                            <a href="https://1122.design" class="copyright__link">1122.design</a> &
+                            <br>
+                            <a href="https://seo-performance.ru" class="copyright__link">seo-performance.ru</a>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="info-footer__left-column">
+
+        </div>
+    </section>
+</footer>
+
+
     </div>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>

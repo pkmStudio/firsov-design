@@ -17,72 +17,8 @@
       </div>
     </section>
     @@include("rectangle-line/rectangle-line.html")
-    <section class="contacts__form-content _container">
-      <div class="contacts__content">
-        <div class="contacts__form form-contacts">
-          <div class="form-contacts__group form-group">
-            <div class="form-group__item">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Имя"
-                onfocus="this.placeholder=''"
-                onblur="this.placeholder='Имя'"
-              />
-              @@include("rectangle-line/rectangle-line.html")
-            </div>
-            <div class="form-group__item">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Телефон"
-                onfocus="this.placeholder=''"
-                onblur="this.placeholder='Телефон'"
-              />
-              @@include("rectangle-line/rectangle-line.html")
-            </div>
-          </div>
-          <div class="form-contacts__checkbox-group">
-            <div class="form-contacts__checkbox-item">
-              <input type="checkbox" id="whatsapp" name="whatsapp" />
-              <label for="whatsapp">WhatsApp</label>
-            </div>
-            <div class="form-contacts__checkbox-item">
-              <input type="checkbox" id="telegram" name="telegram" />
-              <label for="telegram">Telegram</label>
-            </div>
-          </div>
-          <div class="form-contacts__item">
-            <textarea
-              id="comments"
-              name="comments"
-              placeholder="Комментарии"
-              onfocus="this.placeholder=''"
-              onblur="this.placeholder='Комментарии'"
-            ></textarea>
-            @@include("rectangle-line/rectangle-line.html")
-          </div>
-
-          <div class="form-contacts__checkbox-item">
-            <input type="checkbox" id="privacy" name="privacy" required />
-            <label for="privacy">Согласен с политикой конфиденциальности</label>
-          </div>
-
-          <button type="submit" class="form-contacts__button button">
-            Отправить
-          </button>
-        </div>
-      </div>
-      <div class="contacts__email">
-        <a href="mailto:info@firsov.design">info@firsov.design</a>
-      </div>
-    </section>
+    
   </div>
 </main>
-<script src="assets/js/main.js"></script>
 @@include("footer/footer.html")
 <!-- ✅ Подключаем футер -->
