@@ -1,6 +1,7 @@
 .preview {
     background-image: url(../img/banner.webp);
     background-size: cover;
+    position: relative;
 }
 
 .preview {
@@ -26,18 +27,18 @@
     text-align: center;
 }
 
-.preview-title {
+.preview__title {
     margin-bottom: 20px;
 }
 
-.preview-text {
+.preview__text {
     font-size: 1.2em;
     margin-bottom: 30px;
     color: var(--light);
 }
 
 
-.preview-cities {
+.preview__cities {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,28 +49,225 @@
     z-index: 2;
 }
 
-.preview-city {
+.preview__city {
     color: #fff;
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
 
-.preview-city:hover {
+.preview__city:hover {
     opacity: 1;
 }
 
+.project__button {
+    text-align: center;
+    width: 100%;
+}
+
+.about-us {
+    margin-bottom: 170px;
+}
+
+
+.about {
+		// .about__block
+
+		&__block {
+            display: grid;
+            gap: 30px;
+            margin-left: auto;
+            width: 50%;
+            transition: width 0.3s ease;
+		}
+
+		// .about__list
+
+		&__list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+		}
+
+		// .about__item
+
+		&__item {
+		}
+
+		// .about__item-number
+
+		&__item-number {
+            font-size: 32px;
+            margin-bottom: 10px;
+		}
+
+		// .about__item-paragraph
+
+		&__item-paragraph {
+            font-size: 15px;
+            font-weight: 300;
+		}
+}
+
+
 @media (max-width: 768px) {
-    .preview-title {
+    .preview__title {
         font-size: 2.5em;
     }
 
-    .preview-text {
+    .preview__text {
         font-size: 1em;
     }
 
-    .preview-cities {
+    .preview__cities {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 }
+
+
+.studio {
+    &__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+  
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    &__title {
+      align-self: start;
+    }
+  
+    &__intro {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+  
+    &__description {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.6;
+        color: #fff;
+    }
+
+    &__description-right {
+        text-align: right;
+        display: block;
+    }
+        &__description--faded {
+          color:#7C7C7C;
+        }
+  
+    &__highlight {
+      text-decoration: underline;
+      font-weight: 400;
+    }
+  
+    &__stats {
+      display: flex;
+      gap: 40px;
+  
+      @media (max-width: 576px) {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  
+    &__stat-number {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+  
+    &__stat-text {
+      font-size: 15px;
+      font-weight: 300;
+    }
+  
+    &__bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+  
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &__features-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "left ."
+          ". right";
+          column-gap: 40px;
+          height: min-content;
+      }
+    
+      &__features--left {
+        grid-area: left;
+        align-self: start;
+      }
+    
+      &__features--right {
+        grid-area: right;
+        align-self: start;
+      }
+    
+      &__features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+    
+      &__feature {
+        font-size: 12px;
+        color: #7C7C7C;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 25px;
+        padding-top: 20px;
+        text-transform: uppercase;
+        border-top: none;
+      }
+
+      &__feature:nth-child(1n) {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+    
+      // адаптив
+      @media (max-width: 768px) {
+        &__features-layout {
+          grid-template-areas:
+            "left"
+            "right";
+          grid-template-columns: 1fr;
+        }
+      }
+    &__image-wrapper {
+        
+    }
+  
+    &__image {
+      width: 100%;
+      height: auto;
+      border: 2px solid #00aaff;
+  
+      @media (max-width: 576px) {
+        max-width: 100%;
+      }
+    }
+  
+    &__caption {
+      margin-top: 20px;
+      font-size: pclamp(32);
+      color: #aaa;
+      font-weight: 300;
+    }
+  }
+  

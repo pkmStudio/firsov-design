@@ -7,17 +7,17 @@
     <div class="_container">
       <div class="preview__content">
         <p>Студия дизайн-интерьера Алексея Фирсова</p>
-        <h1 class="_h1 preview-title">
+        <h1 class="_h1 preview__title">
             Создайте премиум-интерьер<br />для жизни и инвестиций
         </h1>
-        <p class="preview-text">
+        <p class="preview__text">
           С командой, которая возьмет на себя все этапы:<br />дизайн, отделку,
           мебель и декор
         </p>
         <a href="#" class="button">Обсудить проект</a>
       </div>
 
-      <div class="preview-cities">
+      <div class="preview__cities">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -30,10 +30,10 @@
             fill="#F2F2F2"
           />
         </svg>
-        <span class="preview-city">Moscow</span>
-        <span class="preview-city">Dubai</span>
-        <span class="preview-city">Dominicana</span>
-        <span class="preview-city">Worldwide</span>
+        <span class="preview__city">Moscow</span>
+        <span class="preview__city">Dubai</span>
+        <span class="preview__city">Dominicana</span>
+        <span class="preview__city">Worldwide</span>
       </div>
     </div>
   </section>
@@ -46,8 +46,83 @@
         @@include("project-card/project-card.html")
         @@include("project-card/project-card.html")
       </div>
+      <a href="#" class="button project__button">Посмотреть ещё</a>
     </div>
   </section>
+  <section class="about-us">
+    <div class="_container">
+      <div class="about__block">
+        <h2 class="_h2">О нас в цифрах</h2>
+        <ul class="about__list">
+          <li class="about__item">
+            <p class="about__item-number">350</p>
+            <p class="about__item-paragraph">проектов: Москва, Дубай, Доминикана</p>
+          </li>
+          <li class="about__item">
+            <p class="about__item-number">1-3 $ млн</p>
+            <p class="about__item-paragraph">опыт работы
+              с бюджетами</p>
+          </li>
+          <li class="about__item">
+            <p class="about__item-number">30</p>
+            <p class="about__item-paragraph">инвест-проектов в Москва-Сити</p>
+          </li>
+          <li class="about__item">
+            <p class="about__item-number">25</p>
+            <p class="about__item-paragraph">дизайнеров, архитекторов, инженеров</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="studio">
+    <div class="_container">
+      <div class="studio__top">
+        <h2 class="studio__title _h2">16 лет в дизайне интерьера</h2>
+        <div class="studio__intro">
+         <p class="studio__description">
+  <span class="studio__description-right">Мы одна из немногих студий в России, которые не просто</span>
+  рисуют картинки, а делают интерьеры действительно под ключ.<br>
+  <span class="studio__description--faded">Это когда у вас есть одна команда, которая отвечает за все этапы:</span><br>
+  <strong>дизайн, согласования, инженерия, отделка,</strong><br>
+  <u>ремонт квартир</u>, мебель и декор.
+</p>
+          <div class="studio__stats">
+            <div class="studio__stat">
+              <p class="studio__stat-number">22</p>
+              <p class="studio__stat-text">проекта выполнили за год</p>
+            </div>
+            <div class="studio__stat">
+              <p class="studio__stat-number">10+</p>
+              <p class="studio__stat-text">проектов в Дубае</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="studio__bottom">
+        <div class="studio__features-layout">
+          <ul class="studio__features studio__features--left">
+            <li class="studio__feature">Собственный штат топ-специалистов международного класса</li>
+            <li class="studio__feature">Пул аутсорс-специалистов для увеличения трудовых резервов</li>
+            <li class="studio__feature">Повышение квалификации в России и за рубежом</li>
+          </ul>
+          <ul class="studio__features studio__features--right">
+            <li class="studio__feature">Внутренняя школа дизайна интерьера с базой знаний на основе 17-летнего опыта</li>
+            <li class="studio__feature">Публикации в ведущих профессиональных изданиях</li>
+            <li class="studio__feature">Узкие специалисты для глубокой проработки всех деталей проекта</li>
+          </ul>
+        </div>
+        <div class="studio__image-wrapper">
+          <img src="/assets/img/studio.png" alt="Алексей Фирсов" class="studio__image" />
+          <p class="studio__caption">Алексей Фирсов – руководитель студии</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 </main>
 
 <script src="assets/js/main.js"></script>

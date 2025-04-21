@@ -1,0 +1,9 @@
+$widthContainer: 1280;
+
+@function pclamp($n) {
+  $firstValue: if($n < 1rem, ($n / 16), 1rem);
+  $endValue: (2 * $n / 16)rem;
+  $dynamicValue: ($n * 100 / $widthContainer)vw;
+
+  @return clamp($firstValue, $dynamicValue, $endValue);
+}

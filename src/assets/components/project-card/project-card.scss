@@ -4,19 +4,45 @@
     gap: 40px;
 }
 
-.project__card {
-    padding-bottom: 60px;
+.project {
+    margin-bottom: 170px;
 }
 
-.project__text-name {
-    font-size: 24px;
+.project {
+
+
+
+    // .project__card
+
+    &__card {
+        padding-bottom: 60px;
+    }
+
+    // .project__block-image
+
+    &__img {
+        width: 100%;
+    }
+
+    // .project__text-name
+
+    &__text-name {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    // .project__cities
+
+    &__cities {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    // .project__desc
+
+    &__desc {
+        color: var(--gray-light);
+        font-size: 16px;
+    }
+
 }
-
-.project__cities {
-
-}
-
-.project__desc {
-
-}
-
