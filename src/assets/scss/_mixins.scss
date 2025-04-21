@@ -1,9 +1,12 @@
+@use 'sass:math';
+
 $widthContainer: 1280;
 
 @function pclamp($n) {
-  $firstValue: if($n < 1rem, ($n / 16), 1rem);
-  $endValue: (2 * $n / 16)rem;
-  $dynamicValue: ($n * 100 / $widthContainer)vw;
+  $firstValue: if($n < 1rem, math.div($n, 16) + rem, 1rem);
+  $endValue: math.div(2 * $n, 16) + rem;
+  $dynamicValue: math.div($n * 100, $widthContainer) + vw;;
+
 
   @return clamp($firstValue, $dynamicValue, $endValue);
 }
