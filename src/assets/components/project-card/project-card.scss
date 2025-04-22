@@ -1,11 +1,15 @@
+@use 'sass:math';
+@use 'sass:list';
+@use '../../scss/mixins' as *; // путь адаптируй под структуру
+
 .project__card-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: pclamp(40);
 }
 
 .project {
-    margin-bottom: 170px;
+    margin-bottom: pclamp(170);
 }
 
 .project {
@@ -15,26 +19,27 @@
     // .project__card
 
     &__card {
-        padding-bottom: 60px;
+        padding-bottom: pclamp(60);
     }
 
     // .project__block-image
 
     &__img {
         width: 100%;
+        margin-bottom: 15px;
     }
 
     // .project__text-name
 
     &__text-name {
-        font-size: 24px;
+        font-size: pclamp(24);
         font-weight: 500;
     }
 
     // .project__cities
 
     &__cities {
-        font-size: 16px;
+        font-size: pclamp(16);
         font-weight: 300;
     }
 
@@ -42,7 +47,27 @@
 
     &__desc {
         color: var(--gray-light);
-        font-size: 16px;
+        font-size: pclamp(16);
+    }
+    &__title {
+        margin-bottom: 40px;
     }
 
+@media (max-width: 768px) {
+    &__text {
+        display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+    }
+
+    &__desc {
+        width: 100%;
+    }
+    &__card-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+}
 }

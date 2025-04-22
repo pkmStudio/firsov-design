@@ -1,3 +1,7 @@
+@use 'sass:math';
+@use 'sass:list';
+@use '../../scss/mixins' as *; // путь адаптируй под структуру
+
 .header__preview {
     background-image: url(../../img/banner.png);
     background-size: cover;
@@ -9,12 +13,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
-    position: absolute;
+    padding: pclamp(20) pclamp(30);
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
+    background-color: rgb(26 26 26 / 70%);
 }
 
 .logo {
@@ -24,5 +29,75 @@
 
 .menu {
     display: flex;
-    gap: 20px;
+    gap: pclamp(20);
+
+    @media (max-width: 768px) {
+        display: none; // Скрываем обычное меню на мобильных устройствах
+    }
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: pclamp(30);
+    height: pclamp(24);
+    cursor: pointer;
+
+    .burger__line {
+        height: 4px;
+        background-color: #fff;
+        border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+        display: flex; // Появляется бургер-меню на мобильных
+    }
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    padding: pclamp(30);
+    z-index: 100;
+
+    a {
+        color: #fff;
+        font-size: pclamp(16);
+        padding: pclamp(10) 0;
+        text-decoration: none;
+
+        &:hover {
+            color: #00aaff;
+        }
+    }
+
+    .lang {
+        color: #fff;
+    }
+
+    .mobile-menu__close {
+        position: absolute;
+        top: pclamp(20);
+        right: pclamp(20);
+        font-size: 40px;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.mobile-menu.open {
+    display: flex; // Показываем мобильное меню при открытии
+}
+
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none; // Мобильное меню скрывается на устройствах с шириной экрана более 768px
+    }
 }
