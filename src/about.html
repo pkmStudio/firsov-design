@@ -1,0 +1,107 @@
+<!-- @format -->
+
+@@include("header/header.html")
+<!-- ✅ Подключаем хедер -->
+<main class="main">
+
+    <section class="about-studio">
+        <div class="_container">
+          <div class="about-studio__top">
+            <h2 class="about-studio__title _h2">О СТУДИИ FIRSOV.DESIGN</h2>
+            <div class="about-studio__intro">
+             <p class="about-studio__description">
+                Firsov.<span>Design</span> - профессиональная студия дизайна интерьеров, основанная в 2008 году <br><span>Алексеем Фирсовым</span>.
+    </p>
+    <div class="about-studio__image-wrapper-mob">
+        <img src="/assets/img/studio.png" alt="Алексей Фирсов" class="about-studio__image" />
+        
+      </div>
+              <div class="about-studio__stats">
+                <div class="about-studio__stat">
+                  <p class="about-studio__stat-number">/ 16</p>
+                  <p class="about-studio__stat-text">лет на рынке</p>
+                </div>
+                <div class="about-studio__stat">
+                  <p class="about-studio__stat-number">/ 22</p>
+                  <p class="about-studio__stat-text">проекта выполнили за год</p>
+                </div>
+                <a href="#" class="button project__button about-studio__button">Обсудить проект</a>
+              </div>
+            </div>
+          </div>
+          <div class="about-studio__bottom">
+            <div class="about-studio__image-wrapper">
+                <img src="/assets/img/studio.png" alt="Алексей Фирсов" class="about-studio__image" />
+              </div>
+              <div class="about-studio__block-text">
+                <div class="about-studio__features-layout--top">
+                    Студия специализируется на разработке и реализации комплексных проектов премиум-класса в Москве и Дубае. На 2024 год в портфолио компании более 350 проектов.
+                </div>
+                <div class="about-studio__features-layout--bottom">
+                    <p>Будучи по первому образованию инженером, Алексей особое место уделяет качественной проработке инженерной системы 
+                        и коммуникаций в проектах.</p>
+                        <p>
+                            Постоянные клиенты студии ценят профессиональный подход 
+    к управлению проектами. Это позволяет эффективно реализовывать проекты любой сложности, обеспечивая высокое качество.
+                        </p>
+    
+                        <p>
+                            За годы работы студия Алексея Фирсова сформировала надёжную команду специалистов и партнёров — от архитекторов и дизайнеров до электриков и прорабов. На данный момент команда студии состоит из 25 специалистов.
+                        </p>
+                        <a href="#" class="button project__button">Обсудить проект</a>
+
+                           </div>
+               
+              </div>
+          </div>
+         
+     
+        </div>
+      </section>
+
+      <section class="team-gallery">
+        <div class="_container">
+          <h2 class="team-gallery__title _h2">команда</h2>
+          <div class="team-gallery__grid">
+            @@include("team/team.html")
+            @@include("team/team.html")
+            @@include("team/team.html")
+            @@include("team/team.html")
+            @@include("team/team.html")
+            @@include("team/team.html")
+            @@include("team/team.html")
+            @@include("team/team.html")
+            @@include("team/team.html")
+          </div>
+        </div>
+      </section>
+      <div class="footer__title-block _container">
+        <h2 class="about-footer__title _h2"><span>Заказать</span> дизайн - проект в Москве:</h2>
+
+      </div>
+
+      <script>function toggleMenu() {
+        const menu = document.querySelector('.mobile-menu');
+        menu.classList.toggle('open');
+      }
+      
+      // Закрытие при клике на область слева от меню
+      document.querySelector('.mobile-menu').addEventListener('click', function(event) {
+        if (event.target === this) {
+            toggleMenu();
+        }
+      });
+      
+      // Закрытие при нажатии на кнопку ESC
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const menu = document.querySelector('.mobile-menu');
+            if (menu.classList.contains('open')) {
+                toggleMenu();
+            }
+        }
+      });
+      
+      </script>
+      @@include("footer/footer.html")
+<!-- ✅ Подключаем футер ->

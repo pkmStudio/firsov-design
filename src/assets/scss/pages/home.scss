@@ -14,6 +14,10 @@
  
 }
 
+.preview__subtitle {
+  font-size: pclamp(16);
+}
+
 .preview::before {
     content: '';
     position: absolute;

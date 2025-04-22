@@ -20,5 +20,28 @@
     
   </div>
 </main>
+<script>function toggleMenu() {
+  const menu = document.querySelector('.mobile-menu');
+  menu.classList.toggle('open');
+}
+
+// Закрытие при клике на область слева от меню
+document.querySelector('.mobile-menu').addEventListener('click', function(event) {
+  if (event.target === this) {
+      toggleMenu();
+  }
+});
+
+// Закрытие при нажатии на кнопку ESC
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+      const menu = document.querySelector('.mobile-menu');
+      if (menu.classList.contains('open')) {
+          toggleMenu();
+      }
+  }
+});
+
+</script>
 @@include("footer/footer.html")
 <!-- ✅ Подключаем футер -->
