@@ -56,20 +56,40 @@
 }
 
 .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
     position: fixed;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    padding: pclamp(30);
-    z-index: 100;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+        url(../img/background-mob.webp);
+    background-size: cover;
+    background-position: center;
+    z-index: 1000;
+    
+    /* Анимация */
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    
+    /* Внутренние элементы */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+
+/* Открытое состояние меню */
+
+
 
     a {
         color: #fff;
-        font-size: pclamp(16);
+        font-size: 24px;
         padding: pclamp(10) 0;
         text-decoration: none;
 
@@ -93,11 +113,15 @@
 }
 
 .mobile-menu.open {
-    display: flex; // Показываем мобильное меню при открытии
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
 }
+
 
 @media (min-width: 769px) {
     .mobile-menu {
-        display: none; // Мобильное меню скрывается на устройствах с шириной экрана более 768px
+        display: none; /* Мобильное меню скрывается на устройствах с шириной экрана более 768px */
     }
 }
+
