@@ -1,0 +1,164 @@
+<!-- @format -->
+
+@@include("header/header.html")
+<!-- ✅ Подключаем хедер -->
+<main class="main">
+    <section class="info__project">
+        <div class="_container">
+            <div class="info__block">
+                <div class="info__block-person">
+                    <div class="info__bread">/ Вернуться назад</div>
+                    <div class="info__preson">
+                        <p class="info__person-text">Рук. проекта <span>— Алексей Фирсов</span></p>
+                        <p class="info__person-text">Ведущий дизайнер <span>— Наталья Киржнер</span></p>
+                        <p class="info__person-text">Дизайнер-визуализатор <span>— Ксения Маслова</span></p>
+                    </div>
+                </div>
+                <div class="info__block-about">
+                    <div class="info__about-tabs">
+                        <span>Дубай</span>
+                        <span>400 м2</span>
+                    </div>
+                    <div class="info__about-content">
+                        <h1 class="_h1 info__about-title">Atlantis The Royal</h1>
+                        <p class="info__about-main-desc">Концепт выдержан в мягких оттенках, благородных материалах и блеске золота. Интерьер выглядит роскошно и с шиком, но не вызывающе.</p>
+                        <p class="info__about-accent-desc">Дизайн интерьера апартаментов в Дубае. 2-х этажная квартира с бассейном. Террасой. Площадь более 400 м2</p>
+                        <p class="info__about-accent-desc">Концепт выдержан в мягких оттенках, благородных материалах и блеске золота. Интерьер выглядит роскошно и с шиком, но не вызывающе.</p>
+                    </div>
+                </div>
+            </div>
+               
+            </div>
+        
+    </section>
+    <section class="project__big-image">
+        <div class="_container">
+            <img class="gallery__image" src="/assets/img/project-big-img.png" alt="">
+
+        </div>
+    </section>
+    <section class="project-media">
+        <div class="_container">
+          <div class="project-media__layout">
+            <div class="project-media__main">
+              <img class="_img project-media__image" src="/assets/img/img-pr-1.png" alt="">
+            </div>
+            <div class="project-media__side">
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-2.png" alt="">
+              </div>
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-media">
+        <div class="_container">
+          <div class="project-media__layout">
+            <div class="project-media__main">
+              <img class="_img project-media__image" src="/assets/img/img-pr-1.png" alt="">
+            </div>
+            <div class="project-media__side">
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-2.png" alt="">
+              </div>
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-media">
+        <div class="_container">
+          <div class="project-media__layout">
+            <div class="project-media__main">
+              <img class="_img project-media__image" src="/assets/img/img-pr-1.png" alt="">
+            </div>
+            <div class="project-media__side">
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-2.png" alt="">
+              </div>
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-media">
+        <div class="_container">
+          <div class="project-media__layout">
+            <div class="project-media__main">
+              <img class="_img project-media__image" src="/assets/img/img-pr-1.png" alt="">
+            </div>
+            <div class="project-media__side">
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-2.png" alt="">
+              </div>
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-media">
+        <div class="_container">
+          <div class="project-media__layout">
+            <div class="project-media__main">
+              <img class="_img project-media__image" src="/assets/img/img-pr-1.png" alt="">
+            </div>
+            <div class="project-media__side">
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-2.png" alt="">
+              </div>
+              <div class="project-media__thumb">
+                <img class="_img project-media__image" src="/assets/img/img-pr-3.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section>
+        <div class="_container projects__footer-title">
+            <p class="main-contacts__text _h2 main-contacts__text-project">Заказать дизайн - 
+                проект в Москве:</p>
+        </div>
+      </section>
+    @@include("rectangle-line/rectangle-line.html")
+    
+</main>
+  
+<script>function toggleMenu() {
+  const menu = document.querySelector('.mobile-menu');
+  menu.classList.toggle('open');
+}
+
+// Закрытие при клике на область слева от меню
+document.querySelector('.mobile-menu').addEventListener('click', function(event) {
+  if (event.target === this) {
+      toggleMenu();
+  }
+});
+
+// Закрытие при нажатии на кнопку ESC
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+      const menu = document.querySelector('.mobile-menu');
+      if (menu.classList.contains('open')) {
+          toggleMenu();
+      }
+  }
+});
+
+</script>
+@@include("footer/footer.html")
+<!-- ✅ Подключаем футер -->

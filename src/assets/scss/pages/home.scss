@@ -269,7 +269,7 @@
       &__feature {
         font-size: pclamp(12);
         color: #7C7C7C;
-        border-bottom: pclamp(1) solid rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         padding-bottom: pclamp(25);
         padding-top: pclamp(20);
         text-transform: uppercase;
@@ -359,7 +359,7 @@
 
 
   .studio__feature:first-child {
-    border-top: pclamp(1) solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .team {
@@ -428,7 +428,7 @@
       font-size: pclamp(14);
       font-weight: 500;
       background: transparent;
-      border: pclamp(1) solid #7c7c7c;
+      border: 1px solid #7c7c7c;
       color: #fff;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -520,7 +520,7 @@ margin-bottom: pclamp(170);
       top: 0;
       left: 50%;
       height: 100%;
-      width: pclamp(2);
+      width: 2px;
       background: rgba(255, 255, 255, 0.3);
       z-index: 3;
       display: flex;
@@ -535,7 +535,7 @@ margin-bottom: pclamp(170);
       height: pclamp(32);
       background: white;
       border-radius: 50%;
-      border: pclamp(1) solid #000;
+      border: 1px solid #000;
       z-index: 4;
       position: relative;
   
@@ -747,7 +747,7 @@ margin-bottom: pclamp(170);
   
     &__item {
       padding-bottom: pclamp(10);
-      border-bottom: pclamp(1) solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   
     &__button {
@@ -755,7 +755,7 @@ margin-bottom: pclamp(170);
       font-size: pclamp(14);
       font-weight: 500;
       background: transparent;
-      border: pclamp(1) solid #fff;
+      border: 1px solid #fff;
       color: #fff;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -850,7 +850,7 @@ margin-bottom: pclamp(170);
     &__item {
       padding: pclamp(20);
       border-radius: pclamp(12);
-      border-bottom: pclamp(1) solid rgba(242, 242, 242, 0.2);
+      border-bottom: 1px solid rgba(242, 242, 242, 0.2);
       display: grid;
       grid-template-columns: 1fr 2fr; // 1-й блок с левой стороны, 2-й блок справа
       gap: pclamp(100);
@@ -875,12 +875,12 @@ margin-bottom: pclamp(170);
         margin-top: pclamp(40);
       }
       &__item:first-child {
-          border-top: pclamp(1) solid rgba(242, 242, 242, 0.2);
+          border-top: 1px solid rgba(242, 242, 242, 0.2);
       }
 
       &__button {
         align-self: anchor-center;
-        border: pclamp(1) solid rgba(124, 124, 124, 0.5);
+        border: 1px solid rgba(124, 124, 124, 0.5);
         color: rgba(124, 124, 124, 0.5);
       }
 
@@ -965,7 +965,7 @@ margin-bottom: pclamp(170);
           &--white {
             background-color: #fff;
             color: #333;
-            border: pclamp(1) solid #ddd;
+            border: 1px solid #ddd;
       
             &:hover {
               background-color: #f5f5f5;
@@ -975,7 +975,7 @@ margin-bottom: pclamp(170);
           &--black {
             background-color: #333;
             color: #fff;
-            border: pclamp(1) solid #444;
+            border: 1px solid #444;
       
             &:hover {
               background-color: #444;

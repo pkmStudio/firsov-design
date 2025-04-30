@@ -1,0 +1,98 @@
+<!-- @format -->
+
+@@include("header/header.html")
+<!-- ✅ Подключаем хедер -->
+<main class="main">
+  <div class="projects__main">
+    <section class="project">
+        <div class="_container">
+          <h2 class="_h2 project__title">ПРОЕКТЫ</h2>
+          <div class="project__tabs">
+            <button class="tab-button active" data-tab="all">Все проекты</button>
+            <button class="tab-button" data-tab="moscow">Москва</button>
+            <button class="tab-button" data-tab="city">Москва-Сити</button>
+            <button class="tab-button" data-tab="dubai">Дубай</button>
+            <button class="tab-button" data-tab="other">Другое</button>
+          </div>
+          
+          <div class="project__card-list">
+            <div class="project-card" data-tab-group="dubai">
+              @@include("project-card/project-card.html")
+            </div>
+            <div class="project-card" data-tab-group="dubai">
+              @@include("project-card/project-card.html")
+            </div>
+            <div class="project-card" data-tab-group="moscow">
+              @@include("project-card/project-card.html")
+            </div>
+            <div class="project-card" data-tab-group="moscow">
+              @@include("project-card/project-card.html")
+            </div>
+            <div class="project-card" data-tab-group="city">
+              @@include("project-card/project-card.html")
+            </div>
+            <div class="project-card" data-tab-group="other">
+              @@include("project-card/project-card.html")
+            </div>
+        </div>
+        <a href="#" class="button project__button">Посмотреть ещё</a>
+
+      </section>
+      <section>
+        <div class="_container projects__footer-title">
+            <p class="main-contacts__text _h2 main-contacts__text-project">Заказать дизайн - 
+                проект в Москве:</p>
+        </div>
+      </section>
+    @@include("rectangle-line/rectangle-line.html")
+    
+  </div>
+</main>
+<script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const projectCards = document.querySelectorAll('.project-card');
+  
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Удаляем активный класс у всех
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+  
+        const selectedTab = button.dataset.tab;
+  
+        projectCards.forEach(card => {
+          if (selectedTab === 'all' || card.dataset.tabGroup === selectedTab) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+  
+<script>function toggleMenu() {
+  const menu = document.querySelector('.mobile-menu');
+  menu.classList.toggle('open');
+}
+
+// Закрытие при клике на область слева от меню
+document.querySelector('.mobile-menu').addEventListener('click', function(event) {
+  if (event.target === this) {
+      toggleMenu();
+  }
+});
+
+// Закрытие при нажатии на кнопку ESC
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+      const menu = document.querySelector('.mobile-menu');
+      if (menu.classList.contains('open')) {
+          toggleMenu();
+      }
+  }
+});
+
+</script>
+@@include("footer/footer.html")
+<!-- ✅ Подключаем футер -->

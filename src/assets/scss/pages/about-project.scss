@@ -1,0 +1,157 @@
+.info {
+
+
+    // .info__project
+
+    &__project {
+        padding-top: 100px;
+        margin-bottom: 80px;
+    }
+
+    // .info__block
+
+    &__block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    // .info__block-person
+
+    &__block-person {
+        grid-column: 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    // .info__bread
+
+    &__bread {
+        font-size: 14px;
+        color: var(--light-gray);
+        line-height: 157%;
+    }
+
+    // .info__preson
+
+    &__preson {
+        font-size: 16px;
+        color: #fff;
+        line-height: 157%;
+    }
+
+    &__preson span{
+        color: var(--light-gray);
+    }
+
+    // .info__person-text
+
+    &__person-text {
+    }
+
+    // .info__block-about
+
+    &__block-about {
+        grid-column: 2/3;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    // .info__about-tabs
+    
+    &__about-tabs {
+        display: flex;
+        gap: 15px;
+    }
+
+    &__about-tabs span{
+        border-radius: 30px;
+        border: 1px solid var(--light-gray);
+        padding: 6px 20px;
+        color: var(--light-gray);
+    }
+
+    // .info__about-content
+
+    &__about-content {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    // .info__about-title
+
+    &__about-title {
+        color: #F2F2F2;
+        font-size: 45px;
+        line-height: 74px;
+    }
+
+    // .info__about-main-desc
+
+    &__about-main-desc {
+
+        font-size: 24px;
+        color: #F2F2F2;
+        line-height: 131%;
+    }
+
+    // .info__about-accent-desc
+
+    &__about-accent-desc {
+        color: var(--light-gray);
+    }
+}
+
+.project__big-image {
+    margin-bottom: 100px;
+}
+
+
+.project-media {
+
+    // .project-media__layout
+
+    &__layout {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        margin-bottom: 40px;
+    }
+
+    // .project-media__main
+
+    &__main {
+        grid-column: 1/2;
+        grid-row: 1/5;
+    }
+
+    // .project-media__image
+
+    &__image {
+    }
+
+    // .project-media__side
+
+    &__side {
+        grid-column: 2/3;
+        grid-row: 1/5;
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+    }
+    
+
+    // .project-media__thumb
+
+    &__thumb {
+        height: 100%;
+    }
+}
+
+.projects__footer-title {
+    margin-top: 180px;
+  }

@@ -107,7 +107,7 @@
       &__feature {
         font-size: pclamp(12);
         color: #7C7C7C;
-        border-bottom: pclamp(1) solid rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         padding-bottom: pclamp(25);
         padding-top: pclamp(20);
         text-transform: uppercase;
@@ -292,7 +292,7 @@
       font-size: pclamp(14);
       font-weight: 500;
       background: transparent;
-      border: pclamp(1) solid #7c7c7c;
+      border: 1px solid #7c7c7c;
       color: #fff;
       cursor: pointer;
       transition: all 0.3s ease;
