@@ -24,33 +24,56 @@
 }
 
 .project {
-    &__tabs {
-      display: flex;
-      margin-bottom: pclamp(60);
-      justify-content: space-between;
-      flex-wrap: nowrap;
-  
+  &__tabs {
+    display: flex;
+    margin-bottom: pclamp(60);
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    .tab-button {
+      background: rgba(34, 34, 34, 1);
+      width: 100%; // 👈 По умолчанию (десктоп)
+      font-size: pclamp(14);
+      color: white;
+      border: none;
+      padding: pclamp(10) pclamp(20);
+      cursor: pointer;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+
+      &.active {
+        background-color: #fff;
+        color: #000;
+        border-bottom: 2px solid white;
+      }
+    }
+
+    // Мобильный стиль
+    @media (max-width: 648px) {
+      overflow-x: auto;
+      justify-content: flex-start;
+      gap: 0;
+      padding-bottom: 8px;
+
       .tab-button {
-        background: rgba(34, 34, 34, 1);
-        width: 100%;
-        font-size:  pclamp(14);
-        color: white;
-        border: none;
-        padding: pclamp(10) pclamp(20);
-        cursor: pointer;
-        font-weight: 500;
-        border-bottom: 2px solid transparent;
-        transition: all 0.2s ease;
-  
-        &.active {
-          background-color: #fff;
-          color: #000;
-          border-bottom: 2px solid white;
-        }
+        flex: 0 0 auto; // 👈 Автоширина
+        width: 230px;
+        white-space: nowrap;
+      }
+
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
       }
     }
   }
-  
+}
+
   .project__button {
     display: block;
   }

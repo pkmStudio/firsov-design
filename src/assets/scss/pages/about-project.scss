@@ -1,11 +1,17 @@
+@use 'sass:math';
+@use 'sass:list';
+@use '../mixins' as *; // путь адаптируй под структуру
+
 .info {
 
 
     // .info__project
 
     &__project {
-        padding-top: 100px;
-        margin-bottom: 80px;
+        padding-top: pclamp(100)
+;
+        margin-bottom: pclamp(80)
+;
     }
 
     // .info__block
@@ -13,7 +19,13 @@
     &__block {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        @media (max-width: 648px) {
+            display: block;
+          }
     }
+
+    
 
     // .info__block-person
 
@@ -22,13 +34,15 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        margin-bottom: 30px;
+        margin-bottom: pclamp(30)
+;
     }
 
     // .info__bread
 
     &__bread {
-        font-size: 14px;
+        font-size: pclamp(14)
+;
         color: var(--light-gray);
         line-height: 157%;
     }
@@ -36,7 +50,8 @@
     // .info__preson
 
     &__preson {
-        font-size: 16px;
+        font-size: pclamp(16)
+;
         color: #fff;
         line-height: 157%;
     }
@@ -55,7 +70,8 @@
     &__block-about {
         grid-column: 2/3;
         display: flex;
-        gap: 30px;
+        gap: pclamp(30)
+;
         flex-direction: column;
     }
 
@@ -63,7 +79,8 @@
     
     &__about-tabs {
         display: flex;
-        gap: 15px;
+        gap: pclamp(15)
+;
     }
 
     &__about-tabs span{
@@ -77,7 +94,8 @@
 
     &__about-content {
         display: flex;
-        gap: 30px;
+        gap: pclamp(30)
+;
         flex-direction: column;
     }
 
@@ -85,7 +103,8 @@
 
     &__about-title {
         color: #F2F2F2;
-        font-size: 45px;
+        font-size: pclamp(45)
+;
         line-height: 74px;
     }
 
@@ -93,7 +112,8 @@
 
     &__about-main-desc {
 
-        font-size: 24px;
+        font-size: pclamp(24)
+;
         color: #F2F2F2;
         line-height: 131%;
     }
@@ -103,10 +123,53 @@
     &__about-accent-desc {
         color: var(--light-gray);
     }
+
+    @media (max-width: 648px) {
+        &__about-title {
+            font-size: 24px;
+        }
+
+        &__bread, &__about-tabs {
+            font-size: 12px;
+        }
+
+        &__about-tabs {
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(242, 242, 242, 0.2);
+        }
+
+        &__about-main-desc {
+            margin-bottom: 35px;
+            font-size: 16px;
+            line-height: 120%;
+        }
+
+        &__person-text {
+            margin-bottom: 3px;
+        }
+
+        &__person-text span{
+            color: var(--light-gray);
+
+        }
+
+        &__about-accent-desc {
+            margin-bottom: 45px;
+        }
+    
+      }
 }
 
 .project__big-image {
-    margin-bottom: 100px;
+    margin-bottom: pclamp(100);
+}
+
+@media (max-width: 648px) {
+    .project__big-image {
+        margin: 45px 0;
+    }
+    
 }
 
 
@@ -116,10 +179,11 @@
 
     &__layout {
         display: grid;
-        gap: 40px;
+        gap: pclamp(40);
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(4, 1fr);
-        margin-bottom: 40px;
+        margin-bottom: pclamp(40)
+;
     }
 
     // .project-media__main
@@ -140,7 +204,7 @@
         grid-column: 2/3;
         grid-row: 1/5;
         display: flex;
-        gap: 40px;
+        gap: pclamp(40);
         flex-direction: column;
     }
     
@@ -153,5 +217,6 @@
 }
 
 .projects__footer-title {
-    margin-top: 180px;
+    margin-top: pclamp(180)
+;
   }

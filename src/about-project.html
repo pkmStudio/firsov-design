@@ -136,7 +136,51 @@
     @@include("rectangle-line/rectangle-line.html")
     
 </main>
-  
+<script>
+  (function() {
+    const BREAKPOINT = 648;
+    let moved = false;
+
+    function reorder() {
+      const w = window.innerWidth;
+      if (w <= BREAKPOINT && !moved) {
+        moved = true;
+
+        // Находим все нужные элементы
+        const bread       = document.querySelector('.info__bread');
+        const title       = document.querySelector('.info__about-title');
+        const tabs        = document.querySelector('.info__about-tabs');
+        const mainDesc    = document.querySelector('.info__about-main-desc');
+        const personTexts = document.querySelectorAll('.info__person-text');
+        const bigImageSec = document.querySelector('.project__big-image');
+        const accentDescs = document.querySelectorAll('.info__about-accent-desc');
+        const gallerySec  = document.querySelector('.project-media');
+
+        // 1. Основной блок текста
+        const textWrapper = document.createElement('div');
+        textWrapper.classList.add('_container');
+        [bread, title, tabs, mainDesc].forEach(el => textWrapper.appendChild(el));
+        personTexts.forEach(el => textWrapper.appendChild(el));
+
+        // Вставляем его перед секцией с большим изображением
+        bigImageSec.parentNode.insertBefore(textWrapper, bigImageSec);
+
+        // 2. Акцентные абзацы
+        const accentWrapper = document.createElement('div');
+        accentWrapper.classList.add('_container');
+        accentDescs.forEach(p => accentWrapper.appendChild(p));
+
+        // Вставляем их перед галереей
+        gallerySec.parentNode.insertBefore(accentWrapper, gallerySec);
+      }
+    }
+
+    window.addEventListener('load', reorder);
+    window.addEventListener('resize', reorder);
+  })();
+</script>
+
+
 <script>function toggleMenu() {
   const menu = document.querySelector('.mobile-menu');
   menu.classList.toggle('open');
