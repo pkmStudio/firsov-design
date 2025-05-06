@@ -6,7 +6,8 @@
     background-image: url(../img/banner.webp);
     background-size: cover;
     position: relative;
-    margin-bottom: pclamp(170);
+    margin-bottom: pclamp(67);
+    border-bottom: 2px solid #0C0C0C;
 }
 
 .preview {
@@ -16,6 +17,11 @@
 
 .preview__subtitle {
   font-size: pclamp(16);
+  margin-bottom: pclamp(20);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing:  0.04em;
+
 }
 
 .preview::before {
@@ -25,26 +31,29 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+    background: linear-gradient(180deg, rgba(24, 24, 24, 0.4) -19.2%, rgba(24, 24, 24, 0.5) 33.3%, #181818 80.8%);
     z-index: 1;
+    border-bottom: 2px solid #0C0C0C;
+
 }
 
 .preview__content {
     position: relative;
     z-index: 2;
-    padding: 200px 0px;
+    padding: pclamp(153) 0 pclamp(66);
     text-align: center;
 }
 
 .preview__title {
-    margin-bottom: pclamp(24);
+    margin-bottom: pclamp(25);
     text-transform: uppercase;
 }
 
 .preview__text {
     font-size: pclamp(16);
-    margin-bottom: pclamp(30);
+    margin-bottom: pclamp(42);
     color: var(--light);
+    font-weight: 300;
 }
 
 
@@ -52,8 +61,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: pclamp(20);
-    margin-top: pclamp(50);
+    gap: pclamp(40);
+    margin-top: pclamp(54);
     padding-bottom: 10%;
     position: relative;
     z-index: 2;
@@ -67,6 +76,11 @@
     font-size: pclamp(16);
 }
 
+.preview__city svg{
+  width: pclamp(24);
+  height: pclamp(24);
+}
+
 .preview__city:hover {
     opacity: 1;
 }
@@ -74,7 +88,11 @@
 .project__button {
     text-align: center;
     width: 100%;
+    padding: pclamp(10);
+    line-height: 24.68px;
 }
+
+
 
 .about-us {
     margin-bottom: pclamp(170);
@@ -86,9 +104,9 @@
 
 		&__block {
             display: grid;
-            gap: pclamp(30);
+            gap: pclamp(50);
             margin-left: auto;
-            width: 50%;
+            width: 48.2%;
             transition: width 0.3s ease;
 		}
 
@@ -103,7 +121,7 @@
 		// .about__item
 
 		&__item {
-       padding-bottom: 30px;
+       padding-bottom: pclamp(30);
           border-bottom: 1px solid rgba(242, 242, 242, 0.2);
 		}
 
@@ -119,6 +137,7 @@
 		&__item-paragraph {
             font-size: pclamp(15);
             font-weight: 300;
+            white-space: pre-line;
 		}
     @media (max-width: 768px) {
       &__block {
@@ -126,17 +145,18 @@
 
       }
       &__list {
+        margin-top: 30px;
         display: flex;
         flex-direction: column;
     }
 
     &__item-number {
       font-size: 32px;
-      margin-bottom: 10px;
+      margin-bottom: pclamp(10);
   }
 
   &__item-paragraph {
-    font-size: 15px;
+    font-size: pclamp(15);
     font-weight: 300;
     color: #7C7C7C;
 }
@@ -160,17 +180,23 @@
         align-items: center;
         gap: pclamp(10);
     }
+
+    
+.about-us {
+  margin-bottom: 140px;
+}
+    
 }
 
 
 .studio {
-    margin-bottom: pclamp(170);
+    margin-bottom: pclamp(180);
 
     &__top {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: pclamp(40);
-      margin-bottom: pclamp(60);
+      margin-bottom: pclamp(44);
   
       @media (max-width: pclamp(992)) {
         grid-template-columns: 1fr;
@@ -188,11 +214,12 @@
     }
   
     &__description {
-        font-size: pclamp(16);
-        font-weight: 300;
-        line-height: 1.6;
-        color: #fff;
-        text-indent: 20px;
+      margin-top: pclamp(12);
+      font-size: clamp(1rem, 1.25vw, 2rem);
+      font-weight: 300;
+      line-height: 120%;
+      color: #fff;
+      text-indent: 63px;
     }
 
     &__description-right {
@@ -210,7 +237,7 @@
   
     &__stats {
       display: flex;
-      gap: pclamp(40);
+      gap: pclamp(100);
   
       @media (max-width: pclamp(576)) {
         flex-direction: column;
@@ -263,7 +290,7 @@
         margin: 0;
         display: flex;
         flex-direction: column;
-        gap: pclamp(24);
+        gap: pclamp(6);
       }
     
       &__feature {
@@ -307,7 +334,7 @@
     &__caption {
       margin-top: pclamp(20);
       font-size: pclamp(16);
-      color: #aaa;
+      color: #FCFCFC;
       font-weight: 300;
     }
     @media (max-width: 768px) {
@@ -334,7 +361,7 @@
       font-size: 15px;
       font-weight: 300;
       color: #7C7C7C;
-      padding-bottom: 30px;
+      padding-bottom: pclamp(30);
       border-bottom: 1px solid #7C7C7C;
   }
 
@@ -342,7 +369,7 @@
     display: flex;
     flex-direction: column-reverse;
     gap: 40px;
-    margin-bottom: 170px;
+    margin-bottom: 140px;
 }
 
       &__caption span{
@@ -364,7 +391,7 @@
 
   .team {
 
-    margin-bottom: pclamp(170);
+    margin-bottom: pclamp(180);
 
     &__container {
         display: flex;
@@ -375,6 +402,9 @@
         font-size: pclamp(24);
       margin-bottom: pclamp(40);
       text-transform: uppercase;
+      white-space: pre-line;
+      min-width: pclamp(270);
+  
   
       @media (max-width: pclamp(576)) {
         text-align: center;
@@ -385,7 +415,8 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: pclamp(40);
-      margin-bottom: pclamp(40);
+      row-gap: pclamp(57);
+      margin-bottom: pclamp(46);
   
       @media (max-width: pclamp(992)) {
         grid-template-columns: repeat(2, 1fr);
@@ -403,13 +434,16 @@
       width: 100%;
       height: auto;
       object-fit: cover;
-      margin-bottom: pclamp(16);
+      margin-bottom: pclamp(25);
     }
   
     &__name {
-      font-size: pclamp(16);
+      font-size: pclamp(18);
       font-weight: 500;
-      margin-bottom: pclamp(4);
+      margin-bottom: pclamp(5);
+line-height: 100%;
+letter-spacing: 0px;
+
     }
   
     &__position {
@@ -434,16 +468,18 @@
       transition: all 0.3s ease;
     }
     @media (max-width: 768px) {
-      margin-bottom: 170px;
+      margin-bottom: pclamp(170);
 
       &__container {
         display: flex;
-        gap: 30px;
+        gap: pclamp(30);
         flex-direction: column;
     }
 
     &__grid {
       display: grid;
+      column-gap: 20px;
+      row-gap: 50px;
       grid-template-columns: repeat(2, 1fr);
       margin-bottom: 60px;
   }
@@ -451,14 +487,19 @@
   }
 
   .compare {
-margin-bottom: pclamp(170);
+margin-bottom: pclamp(230);
 
     &__wrapper {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      max-height: pclamp(600);
+      max-height: pclamp(900);
       overflow: hidden;
+      min-height: pclamp(700);
+    }
+
+    &__title {
+      margin-bottom: pclamp(94);
     }
   
     &__content {
@@ -487,7 +528,7 @@ margin-bottom: pclamp(170);
       background: black;
       color: white;
       z-index: 2;
-      padding: pclamp(40) pclamp(30);
+      padding: pclamp(16) 0 pclamp(16) pclamp(24);
     //   transition: width 0.1s;
       overflow: hidden;
       display: flex;
@@ -496,11 +537,12 @@ margin-bottom: pclamp(170);
     }
   
     &__label {
+      line-height: 130%;
+      letter-spacing: 0%;
       position: absolute;
-      top: pclamp(15);
-      font-size: pclamp(14);
+      top: 5px;
+      font-size: pclamp(20);
       font-weight: 500;
-      background: rgba(0, 0, 0, 0.6);
       color: #fff;
       padding: pclamp(4) pclamp(10);
       border-radius: pclamp(4);
@@ -511,7 +553,7 @@ margin-bottom: pclamp(170);
       }
   
       &--right {
-        right: pclamp(15);
+        right: 41%;
       }
     }
   
@@ -546,9 +588,9 @@ margin-bottom: pclamp(170);
         left: 50%;
         border-radius: pclamp(50);
         transform: translate(-50%, -50%);
-        font-size: pclamp(14);
+        font-size: pclamp(17);
         color: rgb(0, 0, 0);
-        padding: pclamp(15);
+        padding: pclamp(10);
         background-color: #fff;
       }
     }
@@ -563,21 +605,24 @@ margin-bottom: pclamp(170);
     }
   
     &__item {
+      font-weight: 300;
+      line-height: 100%;
+      letter-spacing: 0%;
       list-style: circle !important;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
       font-size:  pclamp(15);
-      margin-bottom: pclamp(7);
+      margin-bottom: pclamp(14);
       color: rgba(242, 242, 242, 0.6);
     }
 
     &__item:before {
-        content: '•'; /* Символ кружка */
-        color: rgba(242, 242, 242, 0.6);; /* Белый цвет */
-        position: absolute;
-        left: pclamp(0); /* Сдвигаем маркер влево */
-        font-size: 1.2em; /* Размер кружка */
+      content: "•";
+      color: rgba(242, 242, 242, .6);
+      position: absolute;
+      left: 0;
+      font-size: 1.2em;
       }
 
       @media (max-width: 768px) {
@@ -586,8 +631,8 @@ margin-bottom: pclamp(170);
       }
 
       &__handle {
-        width: 15px;
-        height: 15px;
+        width: pclamp(15);
+        height: pclamp(15);
     }
     &__handle:after {
       border-radius: 50px;
@@ -599,26 +644,26 @@ margin-bottom: pclamp(170);
 }
 
 &__label {
-  font-size: 12px;
-  padding: 10px;
+  font-size: pclamp(12);
+  padding: pclamp(10);
 }
 
 &__wrapper {
-  margin-top: 30px;
+  margin-top: pclamp(30);
   border-top: 1px solid rgba(242, 242, 242, 0.2);
-  padding-top: 30px;
+  padding-top: pclamp(30);
 }
       }
   }
   
   .gallery {
-    margin-bottom: pclamp(170);
+    margin-bottom: pclamp(213);
     &__grid {
             display: grid  ;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(4, 1fr);
             gap: pclamp(40);
-            max-height: pclamp(1250);
+            max-height: pclamp(1255);
   
     //   @media (max-width: pclamp(992)) {
     //     grid-template-columns: repeat(2, 1fr);
@@ -692,14 +737,16 @@ margin-bottom: pclamp(170);
       }
 
       @media(max-width: 768px) {
-        margin-bottom: 170px;
+        margin-bottom: 140px;
       }
   }
   
   .benefits {
-    margin-bottom: pclamp(170);
+    margin-bottom: pclamp(185);
 
     &__block-list {
+      margin-top: pclamp(60);
+      margin-left: pclamp(20);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
@@ -720,19 +767,24 @@ margin-bottom: pclamp(170);
       font-weight: 500;
       line-height: 1.3;
       margin-bottom: pclamp(20);
+      text-transform: none;
     }
     &__title span{
       color: #7C7C7C;
     }
   
     &__text {
-      font-size: pclamp(15);
-      font-weight: 300;
-      line-height: 1.6;
+      font-weight: 500;
+      line-height: 130%;
+      font-size: pclamp(16);
+      line-height: 1.4;
       margin-bottom: pclamp(30);
   
       strong {
         font-weight: 500;
+      }
+      span {
+        color: #7C7C7C;
       }
     }
   
@@ -764,6 +816,11 @@ margin-bottom: pclamp(170);
         background-color: #fff;
         color: #000;
       }
+    }
+
+    &__list > .studio__feature {
+      white-space: pre-line;
+      padding-top: pclamp(13);
     }
   
     &__photo {
@@ -822,13 +879,14 @@ margin-bottom: pclamp(170);
   
     &__list {
       display: flex;
-      gap: pclamp(30);
       flex-direction: column;
+      align-items: flex-end;
     }
 
     &__info {
         display: flex;
         gap: pclamp(100);
+        align-items: center;
       }
 
       &__description {
@@ -848,7 +906,7 @@ margin-bottom: pclamp(170);
       }
   
     &__item {
-      padding: pclamp(20);
+      padding: pclamp(18) pclamp(5);
       border-radius: pclamp(12);
       border-bottom: 1px solid rgba(242, 242, 242, 0.2);
       display: grid;
@@ -869,16 +927,22 @@ margin-bottom: pclamp(170);
         min-width: pclamp(300);
       }
       &__footer {
-        grid-column: span 2;
+        width: 50%;
         display: flex;
         justify-content: center;
         margin-top: pclamp(40);
       }
+
+      &__footer .button{
+        width: 100%;
+      }
+
       &__item:first-child {
           border-top: 1px solid rgba(242, 242, 242, 0.2);
       }
 
       &__button {
+        width: 100%;
         align-self: anchor-center;
         border: 1px solid rgba(124, 124, 124, 0.5);
         color: rgba(124, 124, 124, 0.5);
@@ -894,13 +958,14 @@ margin-bottom: pclamp(170);
       }
       &__info {
         flex-direction: column-reverse;
-        gap: 15px;
+        gap: pclamp(15);
     }
     &__description {
       flex-direction: column;
       gap: 40px;
     }
     &__button {
+      width: 45%;
       align-self: baseline;
       color: #fff;
       border-color: #fff;
@@ -909,9 +974,12 @@ margin-bottom: pclamp(170);
     }
   
     .consultation {
+      margin-bottom: pclamp(180);
+
         &__title {
-          text-align: center;
+          white-space: pre-line;
           margin-bottom: pclamp(40);
+          grid-column: 2/2;
         }
 
         &__block {
@@ -920,14 +988,33 @@ margin-bottom: pclamp(170);
         }
       
         &__wrapper {
+          scrollbar-width: none; /* Для Firefox */
+          -ms-overflow-style: none; /* Для IE и Edge */
           display: flex;
-          justify-content: center;
-          gap: pclamp(30);
+          justify-content: flex-start; // изменено с center на flex-start
+          gap: pclamp(10);
           margin-bottom: pclamp(40);
           grid-column: 2 / 3;
+          overflow-x: auto; // добавляем горизонтальную прокрутку
+          scroll-snap-type: x mandatory; // для плавного скролла
+          padding-bottom: pclamp(10); // место для скроллбара
+          -webkit-overflow-scrolling: touch; // для плавного скролла на iOS
+      
+          // Скрываем стандартный скроллбар (опционально)
+          &::-webkit-scrollbar {
+            height: 5px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 5px;
+          }
+          &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+          }
       
           @media (max-width: pclamp(768)) {
-            flex-direction: column;
+            flex-direction: row; // оставляем row для мобильных
+            flex-wrap: nowrap;
           }
         }
 
@@ -938,9 +1025,14 @@ margin-bottom: pclamp(170);
           }
       
           &__subtitle {
-            font-size: pclamp(18);
-            font-weight: 600;
-            margin-bottom: pclamp(100);
+            font-weight: 400;
+            line-height: 100%;
+            letter-spacing: 0%;
+            
+
+            font-size: pclamp(14);
+            
+            margin-bottom: pclamp(80);
           }
       
           &__list {
@@ -949,18 +1041,26 @@ margin-bottom: pclamp(170);
           }
       
           &__item {
-            font-size: pclamp(14);
+            font-weight: 300;
+            line-height: 140%;
+            letter-spacing: 0%;
+            font-size: pclamp(13);
             color: #ccc;
+            list-style: disc !important;
           }
       
-        &__card {
-          padding: pclamp(20);
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          width: 100%;
-          cursor: pointer;
-          transition: all 0.3s ease;
+          &__card {
+            padding: pclamp(20);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: pclamp(300); // минимальная ширина карточки
+            width: 100%;
+            max-width: pclamp(300); // максимальная ширина (опционально)
+            cursor: pointer;
+            transition: all 0.3s ease;
+            scroll-snap-align: start; // для плавного скролла
+            flex-shrink: 0; // предотвращаем сжатие карточек
       
           &--white {
             background-color: #fff;
@@ -985,7 +1085,7 @@ margin-bottom: pclamp(170);
       
         &__arrows {
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           gap: pclamp(15);
           margin-top: pclamp(30);
           grid-column: 2 / 3;
@@ -993,15 +1093,17 @@ margin-bottom: pclamp(170);
           button {
             border: 1px solid #fff;
             background: 0 0;
-            padding: 5px 9px;
+            padding: pclamp(5) pclamp(10);
             color: #fff;
             font-size: pclamp(20);
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: color 0.3s ease;
+            transition: border-color 0.3s ease;
             grid-column: 2 / 3;
       
             &:hover {
-              transform: scale(1.2);
+              color: rgba(242, 242, 242, 0.2);
+              border-color:  rgba(242, 242, 242, 0.2);
             }
           }
         }
@@ -1019,7 +1121,7 @@ margin-bottom: pclamp(170);
           font-size: 14px;
       }
       &__list {
-        padding-left: 0;
+        padding-left: 10px;
     }
     &__content {
       height: 100%;
@@ -1030,10 +1132,139 @@ margin-bottom: pclamp(170);
       
   @media (max-width: 768px) {
     .preview__title {
-      font-size: 24px;
-      margin: 20px 0;
+      font-size:24px;
+      margin: pclamp(20) 0;
     }
     .preview__text {
-      margin-bottom: 30px;
+      margin-bottom: 45px;
     }
   }
+
+.consultation__slider-controls {
+  grid-column: 2/2;
+}
+  
+  /* Стили для белой карточки (по умолчанию) */
+.consultation__card--white .consultation__item {
+  color: #0C0C0C; /* Чёрный цвет текста */
+}
+
+/* Стили для чёрной карточки */
+.consultation__card--black .consultation__item {
+  color: #7C7C7C; /* Серый цвет текста */
+}
+
+
+@media (max-width: 768px) {
+
+  .preview {
+    margin-bottom: 140px;
+ 
+}
+  .preview__content {
+    padding: 200px 0;
+  }
+
+  
+  .preview__subtitle {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.04em;
+    
+}
+
+.preview__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  
+}
+
+.preview__content .button {
+  width: 100%;
+}
+
+.project {
+  margin-bottom: 140px;
+}
+
+.about-us {
+  margin-bottom: 140px;
+}
+
+.studio__title span{
+  color: #7C7C7C;
+}
+
+
+.team__title span{
+  color: #7C7C7C;
+}
+
+.team__name {
+  margin-bottom: 2px;
+}
+
+  .team {
+    margin-bottom: 140px;
+  }
+
+  .compare__label--right {
+    right: 28%;
+}
+
+.compare {
+  margin-bottom: 140px;
+}
+
+.compare__title {
+  white-space: pre-line;
+}
+
+.compare__title span{
+  color: #7C7C7C;
+}
+
+.benefits__text {
+  text-indent:  45px;
+}
+
+.benefits {
+  margin-bottom: 140px;
+}
+
+.articles__title {
+  margin-bottom: 25px;
+}
+
+.articles__info {
+
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.articles__footer {
+  display: none;
+}
+
+.articles {
+  margin-bottom: 140px;
+}
+
+.consultation__card {
+
+  width: 100%;
+  max-width: 300px; // максимальная ширина (опционально)
+}
+
+.consultation__arrows button {
+  padding: 7px 10px;
+  font-size: 10px;
+}
+
+.consultation {
+  margin-bottom: 140px;
+}
+}

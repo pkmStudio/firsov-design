@@ -5,7 +5,7 @@
 .project__card-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: pclamp(40);
+    column-gap: pclamp(40);
 }
 
 .project {
@@ -19,10 +19,13 @@
     // .project__card
 
     &__card {
-        padding-bottom: pclamp(60);
+        padding-bottom: pclamp(57);
     }
 
     // .project__block-image
+    &__block-image {
+        margin-bottom: 20px;
+    }
 
     &__img {
         width: 100%;
@@ -32,8 +35,10 @@
     // .project__text-name
 
     &__text-name {
+        line-height: 100%;
         font-size: pclamp(24);
         font-weight: 500;
+        margin-bottom: 10px;
     }
 
     // .project__cities
@@ -41,6 +46,7 @@
     &__cities {
         font-size: pclamp(16);
         font-weight: 300;
+        margin-bottom: 10px;
     }
 
     // .project__desc
@@ -71,3 +77,4 @@
       }
 }
 }
+
