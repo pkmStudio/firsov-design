@@ -74,6 +74,13 @@
   }
 }
 
+@media (max-width: 768px) {
+
+  .projects__footer-title {
+    display: block;
+}
+}
+
   .project__button {
     display: block;
   }

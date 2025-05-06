@@ -41,6 +41,10 @@
     color: #fff;
 }
 
+.mobile-menu__close {
+    display: none;
+}
+
 .menu {
 font-size: pclamp(16);
     display: flex;
@@ -48,7 +52,7 @@ font-size: pclamp(16);
     line-height: 131%;
 
     @media (max-width: 768px) {
-        display: none; // Скрываем обычное меню на мобильных устройствах
+        // display: none; // Скрываем обычное меню на мобильных устройствах
     }
 }
 
@@ -71,58 +75,76 @@ font-size: pclamp(16);
     }
 }
 
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
-        url(../img/background-mob.webp);
-    background-size: cover;
-    background-position: center;
-    z-index: 1000;
-    
-    /* Анимация */
-    transform: translateX(100%);
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
-    visibility: hidden;
-    
-    /* Внутренние элементы */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
 
-
-/* Открытое состояние меню */
-
-
-
-    a {
-        color: #fff;
-        font-size: pclamp(24);
-        padding: pclamp(10) 0;
-        text-decoration: none;
-
-        &:hover {
-            color: #00aaff;
-        }
-    }
 
     .lang {
         color: #fff;
     }
 
+
+.mob-lang {
+    display: none;
+}
+
+.mobile__city {
+    display: none;
+}
+
+.mob__burger-block {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+            url(../img/background-mob.webp);
+        background-size: cover;
+        background-position: center;
+        z-index: 1000;
+        
+        /* Анимация */
+        transform: translateX(100%);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        opacity: 0;
+        visibility: hidden;
+        
+        /* Внутренние элементы */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    
+    
+    /* Открытое состояние меню */
+    
+    
+    
+        a {
+            color: #fff;
+            font-size: pclamp(24);
+            padding: pclamp(10) 0;
+            text-decoration: none;
+    
+            &:hover {
+                color: #00aaff;
+            }
+        }
+
+    
     .mobile-menu__close {
         position: absolute;
         top: pclamp(20);
         right: pclamp(20);
-        font-size: pclamp(40);
+        font-size: 40px;
         color: #fff;
         cursor: pointer;
     }
@@ -134,19 +156,6 @@ font-size: pclamp(16);
     visibility: visible;
 }
 
-.mob-lang {
-    display: none;
-}
-
-
-
-@media (min-width: 769px) {
-    .mobile-menu {
-        display: none; /* Мобильное меню скрывается на устройствах с шириной экрана более 768px */
-    }
-}
-
-@media (max-width: 768px) {
     .desc-lang {
         display: none;
     }
@@ -157,14 +166,23 @@ font-size: pclamp(16);
         display: flex;
         gap: 15px;
     }
-
-    .preview__subtitle {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 100%;
-        letter-spacing: 4%;
-        
+    .mobile-menu a {
+      
+font-weight: 400;
+font-size: 24px;
+line-height: 120%;
+letter-spacing: 0%;
+text-align: center;
     }
 
+    .mobile__city {
+        display: flex;
+        gap: 15px;
+        margin-top: 100px;
+    }
+
+    .mobile-menu__close {
+        display: block;
+    }
 }
     
