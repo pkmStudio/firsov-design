@@ -19,7 +19,7 @@ const bs = browserSync.create();
 
 // 🔹 Пути к файлам
 const paths = {
-    html: "src/*.html",
+    html: "src/**/*.html",
     scss: "src/assets/scss/style.scss",
     js: "src/assets/js/main.js",
     images: "src/assets/img/**/*.{png,jpg}",
