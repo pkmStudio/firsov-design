@@ -20,7 +20,7 @@ document.querySelectorAll('textarea').forEach(textarea => {
     function toggleMenu() {
       burger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      // document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
     }
   
     burger.addEventListener('click' , toggleMenu);
