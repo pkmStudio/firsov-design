@@ -1,3 +1,12 @@
+if (!window.__APP_INITIALIZED__) {
+    window.__APP_INITIALIZED__ = true;
+
+    // здесь инициализация
+    console.log("App initialized");
+
+    // например:
+    // const modal = new Modal();
+}
 
 
 
@@ -206,20 +215,20 @@ class Modal {
      * Создает экземпляр модального окна.
      * @param {string} modalSelector - Селектор модального окна.
      * @param {string} popupSelector - Селектор попапа внутри модального окна.
-     * @param {string} responseSelector - Селектор блока response.
+
      * @param {string} closeButtonSelector - Селектор кнопки закрытия модального окна.
      * @param {string} submitButtonSelector - Селектор кнопки отправки формы.
-     * @param {string} resetButtonSelector - Селектор кнопки сброса формы.
+
      * @param {string} openButtonSelector - Селектор кнопки открытия модального окна.
      */
-    constructor(modalSelector, popupSelector, responseSelector, closeButtonSelector, submitButtonSelector, resetButtonSelector, openButtonSelector) {
+    constructor(modalSelector, popupSelector, closeButtonSelector, submitButtonSelector, openButtonSelector) {
         // Инициализация элементов
         this.modal = document.querySelector(modalSelector);
         this.popup = document.querySelector(popupSelector);
-        this.response = document.querySelector(responseSelector);
+
         this.scrollPosition = 0; // Для хранения позиции скролла
 
-        if (!this.modal || !this.popup || !this.response) {
+        if (!this.modal || !this.popup ) {
             console.error('Один или несколько элементов не найдены на странице.');
             return;
         }
@@ -227,7 +236,6 @@ class Modal {
         // Селекторы для кнопок
         this.closeButtonSelector = closeButtonSelector;
         this.submitButtonSelector = submitButtonSelector;
-        this.resetButtonSelector = resetButtonSelector;
         this.openButtonSelector = openButtonSelector;
 
         // Привязка контекста для обработчиков событий
@@ -235,7 +243,6 @@ class Modal {
         this.closeModal = this.closeModal.bind(this);
         this.openModal = this.openModal.bind(this);
         this.handleFormSubmission = this.handleFormSubmission.bind(this);
-        this.handleFormInvalid = this.handleFormInvalid.bind(this);
 
         // Инициализация событий
         this.init();
@@ -248,10 +255,6 @@ class Modal {
     init() {
         document.addEventListener('click', this.handleModalEvents);
         document.addEventListener('keydown', this.handleModalEvents);
-
-        // Добавляем обработчики для событий CF7
-        document.addEventListener('wpcf7mailsent', this.handleFormSubmission, false);
-        document.addEventListener('wpcf7invalid', this.handleFormInvalid, false);
     }
 
     /**
@@ -282,28 +285,25 @@ class Modal {
             document.body.style.top = '';
             window.scrollTo(0, this.scrollPosition);
         }
-        if (this.response && this.response.classList.contains('active')) {
-            this.response.classList.remove('active');
-        }
     }
 
     /**
      * Обрабатывает успешную отправку формы CF7.
      */
     handleFormSubmission() {
-        if (this.response) {
-            this.response.classList.add('active');
-        }
+        // if (this.response) {
+        //     this.response.classList.add('active');
+        // }
     }
 
     /**
      * Обрабатывает невалидную отправку формы CF7.
      */
-    handleFormInvalid() {
-        if (this.response) {
-            this.response.classList.remove('active');
-        }
-    }
+    // handleFormInvalid() {
+    //     if (this.response) {
+    //         this.response.classList.remove('active');
+    //     }
+    // }
 
     /**
      * Обрабатывает события кликов и нажатий клавиш.
@@ -327,9 +327,9 @@ class Modal {
             }
 
             // Обработка кнопки "Заполнить снова"
-            if (e.target.closest(this.resetButtonSelector)) {
-                this.response.classList.remove('active');
-            }
+            // if (e.target.closest(this.resetButtonSelector)) {
+            //     this.response.classList.remove('active');
+            // }
         }
 
         // Обработка нажатия клавиши Escape
@@ -344,10 +344,73 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactModal = new Modal(
         '.popup-wrap',
         '.popup',
-        '.popup__response',
         '.popup__close',
         '.popup__button--submit',
-        '.popup__button--reset',
         '.open__modal'
     );
 });
+
+
+// // Accordion
+
+// //uses classList, setAttribute, and querySelectorAll
+// //if you want this to work in IE8/9 youll need to polyfill these
+// (function(){
+//   var d = document,
+//   accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
+//   setAria,
+//   setAccordionAria,
+//   switchAccordion,
+//   touchSupported = ('ontouchstart' in window),
+//   pointerSupported = ('pointerdown' in window);
+  
+//   skipClickDelay = function(e){
+//     e.preventDefault();
+//     e.target.click();
+//   }
+
+//     setAriaAttr = function(el, ariaType, newProperty){
+//     el.setAttribute(ariaType, newProperty);
+//   };
+//   setAccordionAria = function(el1, el2, expanded){
+//     switch(expanded) {
+//       case "true":
+//         setAriaAttr(el1, 'aria-expanded', 'true');
+//         setAriaAttr(el2, 'aria-hidden', 'false');
+//         break;
+//       case "false":
+//         setAriaAttr(el1, 'aria-expanded', 'false');
+//         setAriaAttr(el2, 'aria-hidden', 'true');
+//         break;
+//       default:
+//         break;
+//     }
+//   };
+// //function
+// switchAccordion = function(e) {
+//   console.log("triggered");
+//   e.preventDefault();
+//   var thisAnswer = e.target.parentNode.nextElementSibling;
+//   var thisQuestion = e.target;
+//   if(thisAnswer.classList.contains('is-collapsed')) {
+//     setAccordionAria(thisQuestion, thisAnswer, 'true');
+//   } else {
+//     setAccordionAria(thisQuestion, thisAnswer, 'false');
+//   }
+//     thisQuestion.classList.toggle('is-collapsed');
+//     thisQuestion.classList.toggle('is-expanded');
+//     thisAnswer.classList.toggle('is-collapsed');
+//     thisAnswer.classList.toggle('is-expanded');
+  
+//     thisAnswer.classList.toggle('animateIn');
+//   };
+//   for (var i=0,len=accordionToggles.length; i<len; i++) {
+//     if(touchSupported) {
+//       accordionToggles[i].addEventListener('touchstart', skipClickDelay, false);
+//     }
+//     if(pointerSupported){
+//       accordionToggles[i].addEventListener('pointerdown', skipClickDelay, false);
+//     }
+//     accordionToggles[i].addEventListener('click', switchAccordion, false);
+//   }
+// })();

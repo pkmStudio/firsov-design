@@ -1,0 +1,158 @@
+<!-- @format -->
+
+@@include("header/header.html")
+<!-- ✅ Подключаем хедер -->
+<main class="main">
+    <div class="development-designer">
+        <section class="development">
+            <div class="_container">
+                <h2 class="_h2 development__title">Этапы разработки дизайна интерьера и&nbsp;его&nbsp;реализации</h2>
+
+
+
+                <div class="development__accordion">
+                    <div class="accordion">
+                        <dl>
+                            <!-- Этап 01 -->
+                            <a href="#accordion1" aria-expanded="false" aria-controls="accordion1"
+                                class="accordion-title is-collapsed accordionTitle js-accordionTrigger">
+                                <dt class="development__dt">
+
+                                    <div class="development__accordion-number-block">/ 01</div>
+                                    <div class="development__accordion-title-block">
+
+                                        <p class="development__accordion-title-block-text">ЗНАКОМСТВО</p>
+                                    </div>
+                                </dt>
+                            </a>
+                            <dd class="accordion-content accordionItem is-collapsed" id="accordion1" aria-hidden="true">
+                                <div class="accordion-content__image-block">
+                                    <img class="accordion__image" src="/assets/img/gallery-1.png" alt="">
+                                </div>
+                                <div class="accordion-content__text-block">
+                                    <ul class="accordion__text-list">
+                                        <li>Собрать данные по объекту</li>
+                                        <li>Выявить потребности заказчика</li>
+                                        <li>Сформулировать задачу</li>
+                                        <li>Концепция и варианты планировки</li>
+                                        <li>Коммерческое предложение</li>
+                                    </ul>
+                                </div>
+                            </dd>
+
+                            <!-- Этап 02 -->
+                            <a href="#accordion2" aria-expanded="false" aria-controls="accordion2"
+                                class="accordion-title is-collapsed accordionTitle js-accordionTrigger">
+                                <dt class="development__dt">
+
+                                    <div class="development__accordion-number-block">/ 02</div>
+                                    <div class="development__accordion-title-block">
+                                        <p class="development__accordion-title-block-text">
+                                            РАЗРАБОТКА ДИЗАЙН-ПРОЕКТА
+                                        </p>
+                                    </div>
+                                </dt>
+                            </a>
+                            <dd class="accordion-content accordionItem is-collapsed" id="accordion2" aria-hidden="true">
+                                <div class="accordion-content__image-block">
+                                    <img class="accordion__image" src="/assets/img/gallery-1.png" alt="">
+                                </div>
+                                <div class="accordion-content__text-block">
+                                    <ul class="accordion__text-list">
+                                        <li>Разработка 3D-визуализаций</li>
+                                        <li>Создание чертежей</li>
+                                        <li>Подбор материалов и мебели</li>
+                                        <li>Согласование всех решений</li>
+                                        <li>Финальный проект</li>
+                                    </ul>
+                                </div>
+                            </dd>
+
+                            <!-- Этап 03 -->
+                            <a href="#accordion3" aria-expanded="false" aria-controls="accordion3"
+                                class="accordion-title is-collapsed accordionTitle js-accordionTrigger">
+                                <dt class="development__dt">
+                                    <div class="development__accordion-number-block">/ 03</div>
+                                    <div class="development__accordion-title-block">
+                                        <p class="development__accordion-title-block-text">
+                                            ЭТАП ОТДЕЛКИ
+                                        </p>
+                                    </div>
+                                </dt>
+                            </a>
+                            <dd class="accordion-content accordionItem is-collapsed" id="accordion3" aria-hidden="true">
+                                <div class="accordion-content__image-block">
+                                    <img class="accordion__image" src="/assets/img/gallery-1.png" alt="">
+                                </div>
+                                <div class="accordion-content__text-block">
+                                    <ul class="accordion__text-list">
+                                        <li>Ремонтно-отделочные работы</li>
+                                        <li>Авторский надзор</li>
+                                        <li>Закупка материалов</li>
+                                        <li>Управление подрядчиками</li>
+                                        <li>Сдача объекта</li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <div class="_container projects__footer-title">
+                <p class="main-contacts__text _h2 main-contacts__text-project">Заказать дизайн -
+                    проект в Москве:</p>
+            </div>
+        </section>
+        @@include("rectangle-line/rectangle-line.html")
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const triggers = document.querySelectorAll('.js-accordionTrigger');
+
+                triggers.forEach(trigger => {
+                    trigger.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        const targetId = this.getAttribute('href').slice(1);
+                        const target = document.getElementById(targetId);
+                        if (!target) return;
+
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+                        // Закрыть все
+                        triggers.forEach(t => {
+                            const id = t.getAttribute('href').slice(1);
+                            const el = document.getElementById(id);
+                            if (!el) return;
+
+                            t.setAttribute('aria-expanded', 'false');
+                            t.classList.remove('is-expanded');
+                            t.classList.add('is-collapsed');
+
+                            el.setAttribute('aria-hidden', 'true');
+                            el.classList.remove('is-expanded', 'animateIn');
+                            el.classList.add('is-collapsed');
+                        });
+
+                        // Открыть текущий, если был закрыт
+                        if (!isExpanded) {
+                            this.setAttribute('aria-expanded', 'true');
+                            this.classList.remove('is-collapsed');
+                            this.classList.add('is-expanded');
+
+                            target.setAttribute('aria-hidden', 'false');
+                            target.classList.remove('is-collapsed');
+                            target.classList.add('is-expanded', 'animateIn');
+                        }
+                    });
+                });
+            });
+        </script>
+
+    </div>
+</main>
+
+@@include("footer/footer.html")
+<!-- ✅ Подключаем футер -->

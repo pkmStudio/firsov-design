@@ -1,3 +1,7 @@
+@use 'sass:math';
+@use 'sass:list';
+@use '../../scss/mixins' as *; // путь адаптируй под структуру
+
 /* Popup CSS */
 .popup-wrap {
     position: fixed;
@@ -24,9 +28,9 @@
 
 .popup {
     position: relative;
-
-    width: 550px;
-    height: 550px;
+    min-width: 300px;
+    width: pclamp(550);
+    // height: 550px;
     -webkit-border-radius: 16px; /* Для поддержки старых версий Safari и iOS */
     -moz-border-radius: 16px; /* Для поддержки старых версий Firefox */
     border-radius: 16px; /* Современный стандарт */
@@ -39,20 +43,20 @@
 }
 
 .popup__container {
-    padding: 119px 50px 50px 50px;
+    padding: pclamp(50) pclamp(50) pclamp(50) pclamp(50);
 }
 
 .popup__header {
-    margin-bottom: 40px;
+    margin-bottom: pclamp(40);
 }
 
 .popup__title {
     /*font-family: var(--medium);*/
-    /*font-size: 28px;*/
+    /*font-size: pclamp(28);*/
     /*line-height: 1;*/
     /*color: #313131;*/
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: pclamp(24);
     text-align: center;
 }
 
@@ -61,7 +65,7 @@
     
 }
 
-.popup__content {
+.popup__content p {
     display: -webkit-box; /* Для поддержки старых версий Safari и iOS */
     display: -ms-flexbox; /* Для поддержки старых версий IE */
     display: flex; /* Современный стандарт */
@@ -69,15 +73,16 @@
     -webkit-box-direction: normal; /* Для поддержки старых версий Safari и iOS */
     -ms-flex-direction: column; /* Для поддержки старых версий IE */
     flex-direction: column; /* Современный стандарт */
-    gap: 20px; /* Современный стандарт */
+    gap: pclamp(5); /* Современный стандарт */
 
-    margin-bottom: 30px;
+    margin-bottom: pclamp(30);
 }
 
 .popup__input {
+    width: 100%;
         margin-bottom: clamp(.5rem, .12vw, 1.5rem);
        background: #323232;
-    padding: 16px 30px 16px 0;
+    padding: pclamp(16) pclamp(30) pclamp(16) 0;
     border-bottom: 1px solid rgba(124,124,124,.5019607843);
 
     /*background: #F5FBFF;*/
@@ -104,18 +109,21 @@
     -webkit-box-pack: center; /* Для поддержки старых версий Safari и iOS */
     -ms-flex-pack: center; /* Для поддержки старых версий IE */
     justify-content: center; /* Современный стандарт */
-    gap: 16px; /* Современный стандарт */
+    gap: pclamp(16); /* Современный стандарт */
 background: #000;
     border: 1px solid #fff;
-    padding: 16px 30px;
+    padding: pclamp(16) pclamp(30);
     /*font-family: var(--medium);*/
     /*font-size: 16px;*/
     /*line-height: 1.3;*/
-    /*color: #F9F9F9;*/
+    width: 100%;
+    color: #F9F9F9;
+        transition: all 0.3s ease;
 }
 .popup__button:hover {
     cursor: pointer;
-    background: #1d793f;
+        background-color: #f2f2f2;
+    color: #000;
 }
 .popup__button svg {
     fill: #F9F9F9;
@@ -191,13 +199,19 @@ background: #000;
     -webkit-box-align: center; /* Для поддержки старых версий Safari и iOS */
     -ms-flex-align: center; /* Для поддержки старых версий IE */
     align-items: center; /* Современный стандарт */
-    gap: 60px; /* Современный стандарт */
+    gap: pclamp(60); /* Современный стандарт */
 }
 
 .popup__response.active + .popup__container {
     display: none;
 }
 
-// @media (max-width: ) {
-    
-// }
+@media (max-width: 768px) {
+  .popup__container {
+    padding: 50px 30px;
+  }
+  
+.popup {
+    width: 90%;
+}
+}

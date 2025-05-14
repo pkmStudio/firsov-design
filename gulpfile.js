@@ -88,7 +88,7 @@ const watchFiles = () => {
 
     watch("src/assets/components/**/*.html", html);
     watch("src/assets/components/**/*.scss", styles);
-    watch("src/assets/components/**/*.js", scripts);
+    // watch("src/assets/components/**/*.js", scripts);
 };
 
 // 🔹 Запуск сервера
