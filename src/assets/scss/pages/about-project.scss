@@ -180,6 +180,7 @@
     &__layout {
         display: grid;
         gap: pclamp(40);
+        max-height: pclamp(680);
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(4, 1fr);
         margin-bottom: pclamp(40)
@@ -213,6 +214,7 @@
 
     &__thumb {
         height: 100%;
+        max-height: pclamp(320);
     }
 }
 
