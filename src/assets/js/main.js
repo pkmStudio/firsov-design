@@ -1,3 +1,124 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const widget = document.getElementById('videoWidget');
+    const popup = document.getElementById('videoPopup');
+    const popupContent = popup.querySelector('.video-popup__content');
+    const closeBtn = popup.querySelector('.video-popup__close');
+
+    // Создаем один video элемент и переиспользуем
+    const video = document.createElement('video');
+    video.src = "https://firsov.design/wp-content/themes/firsov-main/assets/video/video-teaser.mp4";
+    video.type = "video/mp4";
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.setAttribute('webkit-playsinline', '');
+    video.setAttribute('preload', 'metadata');
+
+    // Добавляем в виджет
+    widget.appendChild(video);
+
+    // Автовоспроизведение при попадании в зону видимости (через 3 секунды)
+    setTimeout(() => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                video.play().catch(e => console.log('Autoplay blocked:', e));
+                widget.classList.add('visible');
+                observer.disconnect();
+            }
+        }, {
+            rootMargin: '200px',
+            threshold: 0.01
+        });
+
+        observer.observe(widget);
+    }, 3000);
+
+    // Перемещаем видео в попап
+    widget.addEventListener('click', () => {
+        video.muted = false;
+        video.controls = true;
+        video.currentTime = 0;
+
+        popupContent.insertBefore(video, closeBtn);
+        popup.classList.add('active');
+        video.play().catch(e => console.log('Popup play error:', e));
+    });
+
+    // Закрытие попапа
+    const closePopup = () => {
+        popup.classList.remove('active');
+        video.pause();
+        video.controls = false;
+        video.muted = true;
+
+        widget.appendChild(video);
+    };
+
+    closeBtn.addEventListener('click', closePopup);
+
+    popup.addEventListener('click', (e) => {
+        if (!e.target.closest('.video-popup__content')) closePopup();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
+    });
+});
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Настройки Intersection Observer
+    const observerOptions = {
+        threshold: 0.3, // Срабатывает когда 10% элемента видно
+        rootMargin: '0px 0px -50px 0px' // Небольшой отступ снизу
+    };
+
+    // Функция-обработчик
+    const animateOnScroll = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+
+                // Можно отключить наблюдение после срабатывания
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    // Создаем наблюдатель
+    const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+
+    // Находим все заголовки и добавляем наблюдение
+    const headings = document.querySelectorAll('._h2:not(.animated)');
+    headings.forEach(heading => {
+        observer.observe(heading);
+
+        // Добавляем случайную задержку для эффекта "каскада" (опционально)
+        heading.style.transitionDelay = `${Math.random() * 0.3}s`;
+    });
+
+    // Инициализация анимации для уже видимых элементов
+    const checkVisible = () => {
+        headings.forEach(heading => {
+            const rect = heading.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.9) {
+                heading.classList.add('animated');
+            }
+        });
+    };
+
+    // Проверяем при загрузке
+    checkVisible();
+
+    // И при ресайзе (на случай динамического контента)
+    window.addEventListener('resize', checkVisible);
+});
+
 if (!window.__APP_INITIALIZED__) {
     window.__APP_INITIALIZED__ = true;
 
@@ -171,49 +292,59 @@ tabButtons.forEach(button => {
   }
   
 
+(function() {
+  const BREAKPOINT = 648;
+  let moved = false;
 
-  (function() {
-    const BREAKPOINT = 648;
-    let moved = false;
+  function reorder() {
+    const w = window.innerWidth;
+    if (w <= BREAKPOINT && !moved) {
+      moved = true;
 
-    function reorder() {
-      const w = window.innerWidth;
-      if (w <= BREAKPOINT && !moved) {
-        moved = true;
+      // Находим элементы
+      const bread       = document.querySelector('.info__bread');
+      const title       = document.querySelector('.info__about-title');
+      const tabs        = document.querySelector('.info__about-tabs');
+      const mainDesc    = document.querySelector('.info__about-main-desc');
+      const personTexts = document.querySelectorAll('.info__person-text');
+      const bigImageSec = document.querySelector('.project__big-image');
+      const accentDescs = document.querySelectorAll('.info__about-accent-desc');
+      const gallerySec  = document.querySelector('.project-media');
 
-        // Находим все нужные элементы
-        const bread       = document.querySelector('.info__bread');
-        const title       = document.querySelector('.info__about-title');
-        const tabs        = document.querySelector('.info__about-tabs');
-        const mainDesc    = document.querySelector('.info__about-main-desc');
-        const personTexts = document.querySelectorAll('.info__person-text');
-        const bigImageSec = document.querySelector('.project__big-image');
-        const accentDescs = document.querySelectorAll('.info__about-accent-desc');
-        const gallerySec  = document.querySelector('.project-media');
-
+      // Проверяем обязательные элементы перед перестановкой
+      if (bread && title && tabs && mainDesc && bigImageSec && gallerySec) {
         // 1. Основной блок текста
         const textWrapper = document.createElement('div');
         textWrapper.classList.add('_container');
-        [bread, title, tabs, mainDesc].forEach(el => textWrapper.appendChild(el));
-        personTexts.forEach(el => textWrapper.appendChild(el));
 
-        // Вставляем его перед секцией с большим изображением
+        [bread, title, tabs, mainDesc].forEach(el => {
+          if (el) textWrapper.appendChild(el);
+        });
+
+        personTexts.forEach(el => {
+          if (el) textWrapper.appendChild(el);
+        });
+
         bigImageSec.parentNode.insertBefore(textWrapper, bigImageSec);
+      }
 
-        // 2. Акцентные абзацы
+      // 2. Акцентные абзацы
+      if (accentDescs.length > 0 && gallerySec) {
         const accentWrapper = document.createElement('div');
         accentWrapper.classList.add('_container');
-        accentDescs.forEach(p => accentWrapper.appendChild(p));
 
-        // Вставляем их перед галереей
+        accentDescs.forEach(p => {
+          if (p) accentWrapper.appendChild(p);
+        });
+
         gallerySec.parentNode.insertBefore(accentWrapper, gallerySec);
       }
     }
+  }
 
-    window.addEventListener('load', reorder);
-    window.addEventListener('resize', reorder);
-  })();
-
+  window.addEventListener('load', reorder);
+  window.addEventListener('resize', reorder);
+})();
 
 /**
  * Класс для управления модальным окном.
@@ -429,3 +560,12 @@ switchAccordion = function(e) {
     accordionToggles[i].addEventListener('click', switchAccordion, false);
   }
 })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.querySelector('.map-overlay');
+        if (overlay) {
+            overlay.addEventListener('click', function() {
+                this.classList.add('hidden');
+            });
+        }
+    });

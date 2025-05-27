@@ -187,6 +187,11 @@
 ;
     }
 
+    &__right {
+         grid-column: 2/3;
+        grid-row: 1/5;
+    }
+
     // .project-media__main
 
     &__main {
