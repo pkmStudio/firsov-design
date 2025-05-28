@@ -8,9 +8,10 @@
 }
 
 .project__title {
-    padding-bottom: pclamp(40);
-    border-bottom: 1px solid rgba(242, 242, 242, 0.2);
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(242, 242, 242, 0.2);
 }
+
 
 
 .projects__footer-title {
@@ -30,6 +31,8 @@
     justify-content: space-between;
     flex-wrap: nowrap;
 
+
+    
     .tab-button {
       background: rgba(34, 34, 34, 1);
       width: 100%; // 👈 По умолчанию (десктоп)
@@ -50,37 +53,13 @@
     }
 
     // Мобильный стиль
-    @media (max-width: 648px) {
-      overflow-x: auto;
-      justify-content: flex-start;
-      gap: 0;
-      padding-bottom: 8px;
-
-      .tab-button {
-        flex: 0 0 auto; // 👈 Автоширина
-        width: 230px;
-        white-space: nowrap;
-      }
-
-      &::-webkit-scrollbar {
-        height: 4px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 2px;
-      }
-    }
   }
 }
 
-@media (max-width: 768px) {
-
-  .projects__footer-title {
-    display: block;
+  .about-studio__button {
+  display: none;
+  text-align: center;
+  width: 100%;
+  padding: clamp(1rem, 0.78125vw, 1.25rem);
+  line-height: 24.68px;
 }
-}
-
-  .project__button {
-    display: block;
-  }

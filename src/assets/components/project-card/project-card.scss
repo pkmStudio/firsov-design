@@ -28,10 +28,12 @@
     }
 
     &__img {
-        width: 100%;
-        height: pclamp(380);
-        margin-bottom: 15px;
-    }
+  object-fit: cover;
+  height: clamp(1rem, 29.6875vw, 47.5rem);
+
+  width: 100%;
+  margin-bottom: 15px;
+}
 
     // .project__text-name
 
@@ -60,22 +62,22 @@
         margin-bottom: 40px;
     }
 
-@media (max-width: 768px) {
-    &__text {
-        display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 10px;
-    }
+// @media (max-width: 768px) {
+//     &__text {
+//         display: flex;
+//             flex-wrap: wrap;
+//             justify-content: space-between;
+//             gap: 10px;
+//     }
 
-    &__desc {
-        width: 100%;
-    }
-    &__card-list {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-      }
-}
+//     &__desc {
+//         width: 100%;
+//     }
+//     &__card-list {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 30px;
+//       }
+// }
 }
 

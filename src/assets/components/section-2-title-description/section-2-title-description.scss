@@ -1,0 +1,29 @@
+.title-description {
+
+
+    &__container {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+            margin-bottom: clamp(1rem, 13.28125vw, 21.25rem);
+    }
+
+     &__title {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 130%;
+        letter-spacing: 0%;
+        margin-bottom: 40px;
+        vertical-align: middle;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .title-description__container {
+        display: flex;
+        flex-direction: column;
+
+    }
+}

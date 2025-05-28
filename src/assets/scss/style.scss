@@ -12,10 +12,3 @@
 @use "pages/steps-development";
 
 // Я думаю это общий стиль
-input:focus, textarea:focus {
-    color: #7C7C7C80;
-}
-input, textarea {
-    background: #181818;
-    color: #7C7C7C80;
-}

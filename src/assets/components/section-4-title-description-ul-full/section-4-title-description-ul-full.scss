@@ -1,0 +1,16 @@
+.title-desc-ul-full {
+  &__container {
+    display: flex;
+    flex-direction: column;
+     margin-bottom: clamp(1rem, 13.28125vw, 21.25rem);
+  }
+
+  
+
+  @media (max-width: 768px) {
+    &__container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
