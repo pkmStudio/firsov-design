@@ -5,8 +5,8 @@
         display: grid;
         gap: 40px;
         grid-template-columns: 1fr 1fr;
-            margin-bottom: clamp(1rem, 13.28125vw, 21.25rem);
-    }
+     margin-bottom: 85px;
+          padding-top: 85px;    }
 
      &__title {
         font-weight: 500;

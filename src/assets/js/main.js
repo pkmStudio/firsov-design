@@ -491,76 +491,116 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Accordion
+// // Accordion
 
-//uses classList, setAttribute, and querySelectorAll
-//if you want this to work in IE8/9 youll need to polyfill these
-(function(){
-  var d = document,
-  accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
-  setAria,
-   setAriaAttr,
-  setAccordionAria,
-  switchAccordion,
-   skipClickDelay,
-  touchSupported = ('ontouchstart' in window),
-  pointerSupported = ('pointerdown' in window);
+// //uses classList, setAttribute, and querySelectorAll
+// //if you want this to work in IE8/9 youll need to polyfill these
+// (function(){
+//   var d = document,
+//   accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
+//   setAria,
+//    setAriaAttr,
+//   setAccordionAria,
+//   switchAccordion,
+//    skipClickDelay,
+//   touchSupported = ('ontouchstart' in window),
+//   pointerSupported = ('pointerdown' in window);
   
-  skipClickDelay = function(e){
-    e.preventDefault();
-    e.target.click();
-  }
+//   skipClickDelay = function(e){
+//     e.preventDefault();
+//     e.target.click();
+//   }
 
-    setAriaAttr = function(el, ariaType, newProperty){
-    el.setAttribute(ariaType, newProperty);
-  };
-  setAccordionAria = function(el1, el2, expanded){
-    switch(expanded) {
-      case "true":
-        setAriaAttr(el1, 'aria-expanded', 'true');
-        setAriaAttr(el2, 'aria-hidden', 'false');
-        break;
-      case "false":
-        setAriaAttr(el1, 'aria-expanded', 'false');
-        setAriaAttr(el2, 'aria-hidden', 'true');
-        break;
-      default:
-        break;
-    }
-  };
-//function
-switchAccordion = function(e) {
+//     setAriaAttr = function(el, ariaType, newProperty){
+//     el.setAttribute(ariaType, newProperty);
+//   };
+//   setAccordionAria = function(el1, el2, expanded){
+//     switch(expanded) {
+//       case "true":
+//         setAriaAttr(el1, 'aria-expanded', 'true');
+//         setAriaAttr(el2, 'aria-hidden', 'false');
+//         break;
+//       case "false":
+//         setAriaAttr(el1, 'aria-expanded', 'false');
+//         setAriaAttr(el2, 'aria-hidden', 'true');
+//         break;
+//       default:
+//         break;
+//     }
+//   };
+// //function
+// switchAccordion = function(e) {
   
-  e.preventDefault();
+//   e.preventDefault();
 
-  var thisQuestion = e.currentTarget;
-  var thisAnswer = thisQuestion.nextElementSibling;
+//   var thisQuestion = e.currentTarget;
+//   var thisAnswer = thisQuestion.nextElementSibling;
 
-  if (!thisAnswer) return;
+//   if (!thisAnswer) return;
 
-  if (thisAnswer.classList.contains('is-collapsed')) {
-    setAccordionAria(thisQuestion, thisAnswer, 'true');
-  } else {
-    setAccordionAria(thisQuestion, thisAnswer, 'false');
-  }
+//   if (thisAnswer.classList.contains('is-collapsed')) {
+//     setAccordionAria(thisQuestion, thisAnswer, 'true');
+//   } else {
+//     setAccordionAria(thisQuestion, thisAnswer, 'false');
+//   }
 
-  thisQuestion.classList.toggle('is-collapsed');
-  thisQuestion.classList.toggle('is-expanded');
-  thisAnswer.classList.toggle('is-collapsed');
-  thisAnswer.classList.toggle('is-expanded');
-  thisAnswer.classList.toggle('animateIn');
-};
-  for (var i=0,len=accordionToggles.length; i<len; i++) {
-    if(touchSupported) {
-      accordionToggles[i].addEventListener('touchstart', skipClickDelay, false);
-    }
-    if(pointerSupported){
-      accordionToggles[i].addEventListener('pointerdown', skipClickDelay, false);
-    }
-    accordionToggles[i].addEventListener('click', switchAccordion, false);
-  }
-})();
+//   thisQuestion.classList.toggle('is-collapsed');
+//   thisQuestion.classList.toggle('is-expanded');
+//   thisAnswer.classList.toggle('is-collapsed');
+//   thisAnswer.classList.toggle('is-expanded');
+//   thisAnswer.classList.toggle('animateIn');
+// };
+//   for (var i=0,len=accordionToggles.length; i<len; i++) {
+//     if(touchSupported) {
+//       accordionToggles[i].addEventListener('touchstart', skipClickDelay, false);
+//     }
+//     if(pointerSupported){
+//       accordionToggles[i].addEventListener('pointerdown', skipClickDelay, false);
+//     }
+//     accordionToggles[i].addEventListener('click', switchAccordion, false);
+//   }
+// })();
+  document.addEventListener('DOMContentLoaded', function () {
+                const triggers = document.querySelectorAll('.js-accordionTrigger');
 
+                triggers.forEach(trigger => {
+                    trigger.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        const targetId = this.getAttribute('href').slice(1);
+                        const target = document.getElementById(targetId);
+                        if (!target) return;
+
+                        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+                        // Закрыть все
+                        triggers.forEach(t => {
+                            const id = t.getAttribute('href').slice(1);
+                            const el = document.getElementById(id);
+                            if (!el) return;
+
+                            t.setAttribute('aria-expanded', 'false');
+                            t.classList.remove('is-expanded');
+                            t.classList.add('is-collapsed');
+
+                            el.setAttribute('aria-hidden', 'true');
+                            el.classList.remove('is-expanded', 'animateIn');
+                            el.classList.add('is-collapsed');
+                        });
+
+                        // Открыть текущий, если был закрыт
+                        if (!isExpanded) {
+                            this.setAttribute('aria-expanded', 'true');
+                            this.classList.remove('is-collapsed');
+                            this.classList.add('is-expanded');
+
+                            target.setAttribute('aria-hidden', 'false');
+                            target.classList.remove('is-collapsed');
+                            target.classList.add('is-expanded', 'animateIn');
+                        }
+                    });
+                });
+            });
   document.addEventListener('DOMContentLoaded', function() {
         const overlay = document.querySelector('.map-overlay');
         if (overlay) {
