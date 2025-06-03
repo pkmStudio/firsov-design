@@ -1039,6 +1039,10 @@
 /* Стили для белой карточки (по умолчанию) */
 .consultation__card--white .consultation__item {
   color: #0C0C0C;
+    background-image:  url(../img/step.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   /* Чёрный цвет текста */
 }
 

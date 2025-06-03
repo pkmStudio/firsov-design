@@ -1,0 +1,125 @@
+.reviews {
+      margin-bottom: 85px;
+          padding-top: 85px;
+}
+
+.reviews__title {
+  margin-bottom: 30px;
+}
+
+.reviews__add-descr {
+  white-space: pre-line;
+font-weight: 400;
+font-size: 16px;
+line-height: 131%;
+letter-spacing: 0%;
+color: #999999;
+}
+
+.reviews__intro {
+  border-top: 1px solid rgba(242, 242, 242, 0.2);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  padding-top: 30px;
+
+}
+
+.reviews__add-review {
+  color: #F2F2F2;
+  cursor: pointer;
+font-weight: 500;
+font-size: 11px;
+line-height: 160%;
+letter-spacing: 0%;
+vertical-align: middle;
+text-transform: uppercase;
+padding-right: 50px;
+position: relative;
+}
+
+.reviews__add-review::before {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: -3px;
+    font-size: 18px;
+    transition: transform .3s;
+}
+
+.reviews__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+.reviews__left-block {
+  flex-shrink: 0;
+}
+
+.reviews__name {
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0%;
+text-transform: uppercase;
+color: #F2F2F2;
+}
+
+.reviews__item {
+  flex-grow: 1;
+  position: relative;
+}
+
+.reviews__item-title {
+font-weight: 400;
+font-size: 16px;
+line-height: 131%;
+letter-spacing: 0%;
+color: #999999;
+margin-bottom: 30px;
+}
+
+.reviews__toggle {
+  position: relative;
+  padding-right: 24px;
+font-weight: 500;
+font-size: 11px;
+line-height: 160%;
+letter-spacing: 0%;
+vertical-align: middle;
+text-transform: uppercase;
+  color: #F2F2F2;
+    border-bottom: 1px solid rgba(242, 242, 242, 0.2);;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding-bottom: 10px;
+}
+
+.reviews__toggle::before {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 1px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.reviews__toggle.active::before {
+  transform: rotate(45deg);
+}
+
+.reviews__original {
+  display: none;
+  margin-top: 10px;
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.reviews__original.show {
+  display: block;
+}

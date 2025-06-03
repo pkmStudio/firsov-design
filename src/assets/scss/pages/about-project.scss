@@ -358,7 +358,7 @@
   }
 }
 .accordion-title:hover .development__accordion-title-block-text {
-  transform: translateX(10px);
+  transform: translateX(0px);
 }
 
 .development__accordion-title-block-text {
@@ -531,6 +531,19 @@ input, textarea {
   color: #000;
 }
 
+.n-rooms-accordion {
+  display: flex;
+  padding-right: 20px;
+}
+
+.accordion-content-nrooms {
+  display: flex;
+}
+
+.preview-nkomnaty {
+  display: flex;
+  align-items: center;
+}
 
 @media (max-width: 768px) {
   ._h2 {
